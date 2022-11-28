@@ -1,9 +1,13 @@
 import "./App.css";
 import { useEffect } from "react";
 import Home from "../components/Home";
+import Nav from "../components/Nav";
+import GameOfTheYear from "../components/GameOfTheYear";
+import Descriptor from "../components/Descriptor";
+import Footer from "../components/Footer";
 
 function App() {
-  const API_KEY = "ed4d749789a64b878e8ab911afbb925c"; // add security here
+  const API_KEY = "ed4d749789a64b878e8ab911afbb925c"; // add to env here
   const url = `https://rawg-video-games-database.p.rapidapi.com/games?key=${API_KEY}`;
 
   useEffect(() => {
