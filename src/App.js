@@ -8,10 +8,10 @@ import Footer from "./components/Footer";
 
 function App() {
   const [searching, setSearching] = useState(false);
-  const API_KEY = "ed4d749789a64b878e8ab911afbb925c"; // add to env here
-  const url = `https://rawg-video-games-database.p.rapidapi.com/games?key=${API_KEY}`;
 
-  const fetching = () => {
+  const fetching = (urlExtension) => {
+    const API_KEY = "ed4d749789a64b878e8ab911afbb925c"; // add to env here
+    const url = `https://rawg-video-games-database.p.rapidapi.com/${urlExtension}?key=${API_KEY}`;
     const options = {
       method: "GET",
       headers: {
