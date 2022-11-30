@@ -5,13 +5,13 @@ const Home = () => {
     <div>
       <div className="content">
         <p className="red-subtext">EVOLVE YOUR PLAYSTYLE</p>
-        <h1>
+        <h1 className="bold-title">
           Find Games <br />
           for you
         </h1>
-        <p>
-          At Gamerz, we will help you find your next game, your new playstyle,
-          the new YOU.
+        <p className="subtext">
+          At Gamerz, we will help you find your next
+          <br /> game, your new playstyle, the new YOU.
         </p>
         <div className="buttons">
           <button>About Us</button>
