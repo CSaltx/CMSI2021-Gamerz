@@ -1,6 +1,7 @@
 @font-face {
   font-family: Inter;
   src: url("./Inter-VariableFont_slnt\,wght.ttf");
+  font-weight: 500;
 }
 
 @font-face {
@@ -40,10 +41,11 @@
   font-family: Inter-Bold;
   font-size: 8.66vh;
   line-height: 77.45px;
-  margin-bottom: 0;
+  margin: 0;
 }
 
-.subtext {
+.bold {
+  font-family: Inter-Bold;
 }
 
 .content {
@@ -63,6 +65,24 @@
   height: 100vh;
   overflow-y: scroll;
   background-color: #fff;
+}
+
+.gotys {
+  color: #111235;
+  font-family: Inter;
+  font-size: 8.66vh;
+  margin-top: 19.3vh;
+  margin-left: 14.9vh;
+  text-transform: uppercase;
+}
+
+.games {
+  display: grid;
+  margin: 7vh 15.5vh 0 15.5vh;
+}
+
+.red {
+  color: #ff0000;
 }
 
 .descriptor {

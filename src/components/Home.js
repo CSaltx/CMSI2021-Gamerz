@@ -7,7 +7,7 @@ const Home = () => {
         <p className="red-subtext">EVOLVE YOUR PLAYSTYLE</p>
         <h1 className="bold-title">
           Find Games <br />
-          for you
+          for <span className="bold">you</span>
         </h1>
         <p className="subtext">
           At Gamerz, we will help you find your next
