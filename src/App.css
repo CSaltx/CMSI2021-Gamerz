@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: Inter;
   src: url("./Inter-VariableFont_slnt\,wght.ttf");
@@ -53,11 +52,16 @@
   background-color: #111235;
 }
 
-<<<<<<< HEAD
+.descriptor {
+  width: 100%;
+  height: 100vh;
+  background-color: #111235;
+}
+
 .footer {
+  width: 100%;
+  height: 100vh;
   display: grid;
   grid-row: repeat(2, 1fr);
+  background-color: #ff5353;
 }
-=======
-.footer {}
->>>>>>> refs/remotes/origin/main

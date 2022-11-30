@@ -1,5 +1,5 @@
 import "./App.css";
-import { useEffect } from "react";
+import { useState } from "react";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
 import GameOfTheYear from "./components/GameOfTheYear";
@@ -7,10 +7,11 @@ import Descriptor from "./components/Descriptor";
 import Footer from "./components/Footer";
 
 function App() {
+  const [searching, setSearching] = useState(false);
   const API_KEY = "ed4d749789a64b878e8ab911afbb925c"; // add to env here
   const url = `https://rawg-video-games-database.p.rapidapi.com/games?key=${API_KEY}`;
 
-  useEffect(() => {
+  const fetching = () => {
     const options = {
       method: "GET",
       headers: {
@@ -23,25 +24,31 @@ function App() {
       .then((response) => response.json())
       .then((response) => console.log(response))
       .catch((err) => console.error(err));
-  });
+  };
 
   return (
-    <div className="home-page">
-      <div className="nav">
-        <Nav />
-      </div>
-      <div className="home">
-        <Home />
-      </div>
-      <div className="goty">
-        <GameOfTheYear />
-      </div>
-      <div className="descriptor">
-        <Descriptor />
-      </div>
-      <div className="Footer">
-        <Footer />
-      </div>
+    <div className="main-page">
+      {!searching ? (
+        <div className="home-page">
+          <div className="nav">
+            <Nav />
+          </div>
+          <div className="home">
+            <Home />
+          </div>
+          <div className="goty">
+            <GameOfTheYear />
+          </div>
+          <div className="descriptor">
+            <Descriptor />
+          </div>
+          <div className="footer">
+            <Footer />
+          </div>
+        </div>
+      ) : (
+        <div className="results"></div>
+      )}
     </div>
   );
 }
