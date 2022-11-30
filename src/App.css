@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: Inter;
   src: url("./Inter-VariableFont_slnt\,wght.ttf");
@@ -17,6 +18,17 @@
 
 .home-page > div {
   scroll-snap-align: start;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .nav {
@@ -52,7 +64,11 @@
   background-color: #111235;
 }
 
+<<<<<<< HEAD
 .footer {
   display: grid;
   grid-row: repeat(2, 1fr);
 }
+=======
+.footer {}
+>>>>>>> refs/remotes/origin/main
