@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div>
       <div className="content">
-        <p>EVOLVE YOUR PLAYSTYLE</p>
+        <p className="red-subtext">EVOLVE YOUR PLAYSTYLE</p>
         <h1>
           Find Games <br />
           for you
