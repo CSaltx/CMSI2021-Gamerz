@@ -37,7 +37,7 @@ function App() {
             <Home />
           </div>
           <div className="goty">
-            <GameOfTheYear />
+            <GameOfTheYear fetch={fetching} />
           </div>
           <div className="descriptor">
             <Descriptor />

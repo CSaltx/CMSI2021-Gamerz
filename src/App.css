@@ -11,8 +11,9 @@
 }
 
 .home-page {
-  scroll-snap-type: y mandatory;
   overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-padding: 24px;
   scroll-snap-points-y: repeat(100vh);
 }
 
@@ -91,10 +92,92 @@
   background-color: #111235;
 }
 
+.analytics-subtitle {
+  color: white;
+  font-family: Inter;
+  font-size: 2.4vh;
+  width: 55.4vh;
+  margin: 0;
+}
+
+.main-footer {
+  display: grid;
+  grid-row: repeat(2, 1fr);
+}
+
+.top-portion {
+  height: fit-content;
+  color: white;
+  font-size: 4vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-portion > button {
+  border: 8px solid white;
+  font-family: Inter-Bold;
+  font-size: 4.9vh;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  height: 12.9vh;
+  width: 54vh;
+}
+
+.bottom-portion {
+  background-color: #111235;
+}
+
+.descriptor-page {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 18vh;
+  margin-bottom: 0;
+}
+
+.analytics-title {
+  margin-top: 0;
+  color: white;
+  font-family: Inter-Bold;
+  font-size: 3vh;
+  line-height: 5vh;
+}
+
 .footer {
   width: 100%;
   height: 100vh;
   display: grid;
   grid-row: repeat(2, 1fr);
   background-color: #ff5353;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4vh;
+}
+
+.buttons > button {
+  border-radius: 0 5px 5px 5px;
+  border: none;
+  cursor: pointer;
+  height: 4vh;
+  width: 15vh;
+  margin-top: 6vh;
+  font-family: Inter-Bold;
+}
+
+.about-button {
+  background-color: #d9d9d9;
+  color: #000;
+}
+
+.started-button {
+  color: #fff;
+  background-color: #ff0000;
 }

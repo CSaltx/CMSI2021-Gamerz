@@ -1,19 +1,17 @@
 import React from "react";
 
-const GameOfTheYear = ({ fetchGames }) => {
+const GameOfTheYear = ({ fetch }) => {
   return (
     <div>
       <div className="gotys">
         Games of the <span className="red">Year</span>
       </div>
       <div className="games">
-        {fetchGames().map((key, value) => (
+        {/* {fetch("games").map((key, value) => (
           <div className="image" key={key}>
             <img src="#"></img>
-            {/* get value.image when calling fetchGames with correct url extension */}
-            <p></p>
-          </div>
-        ))}
+            get value.image when calling fetchGames with correct url extension
+        )) */}
       </div>
     </div>
   );

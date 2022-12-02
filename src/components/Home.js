@@ -11,11 +11,12 @@ const Home = () => {
         </h1>
         <p className="subtext">
           At Gamerz, we will help you find your next
-          <br /> game, your new playstyle, the new YOU.
+          <br /> game, your new playstyle, the new{" "}
+          <span className="bold">YOU</span>.
         </p>
         <div className="buttons">
-          <button>About Us</button>
-          <button>Get Started</button>
+          <button className="about-button">About Us</button>
+          <button className="started-button">Get Started</button>
         </div>
       </div>
       <div className="image"></div>
