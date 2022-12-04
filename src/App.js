@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 
 function App() {
   const [searching, setSearching] = useState(false);
+  const [article, setArticle] = useState(null);
 
   const fetching = (urlExtension) => {
     const API_KEY = "ed4d749789a64b878e8ab911afbb925c"; // add to env here
@@ -26,13 +27,17 @@ function App() {
       .catch((err) => console.error(err));
   };
 
+  useState(() => {
+    console.log(searching);
+  });
+
   return (
     <div className="main-page">
+      <div className="nav">
+        <Nav setSearching={setSearching} fetching={fetching} />
+      </div>
       {!searching ? (
         <div className="home-page">
-          <div className="nav">
-            <Nav />
-          </div>
           <div className="home">
             <Home />
           </div>
@@ -46,8 +51,12 @@ function App() {
             <Footer />
           </div>
         </div>
+      ) : !article ? (
+        <div className="results">
+          <h1>Hello YOU MADE IT</h1>
+        </div>
       ) : (
-        <div className="results"></div>
+        <div className="result-article"></div>
       )}
     </div>
   );
