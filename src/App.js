@@ -1,10 +1,11 @@
 import "./App.css";
 import { useEffect } from "react";
-import Home from "../components/Home";
-import Nav from "../components/Nav";
-import GameOfTheYear from "../components/GameOfTheYear";
-import Descriptor from "../components/Descriptor";
-import Footer from "../components/Footer";
+import Home from "./components/Home";
+import Nav from "./components/Nav";
+import GameOfTheYear from "./components/GameOfTheYear";
+import Descriptor from "./components/Descriptor";
+import Footer from "./components/Footer";
+
 
 function App() {
   const API_KEY = "ed4d749789a64b878e8ab911afbb925c"; // add to env here
@@ -24,6 +25,12 @@ function App() {
       .then((response) => console.log(response))
       .catch((err) => console.error(err));
   });
+  
+  useEffect(() => {
+    
+    
+  })
+
 
   return (
     <>
@@ -47,9 +54,3 @@ function App() {
 }
 
 export default App;
-
-/* 
-  
-
-
- */
