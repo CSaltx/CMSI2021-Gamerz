@@ -1,10 +1,10 @@
 import "./App.css";
-import { useEffect } from "react";
-import Home from "../components/Home";
-import Nav from "../components/Nav";
-import GameOfTheYear from "../components/GameOfTheYear";
-import Descriptor from "../components/Descriptor";
-import Footer from "../components/Footer";
+import { useState } from "react";
+import Home from "./components/Home";
+import Nav from "./components/Nav";
+import GameOfTheYear from "./components/GameOfTheYear";
+import Descriptor from "./components/Descriptor";
+import Footer from "./components/Footer";
 
 function App() {
   const [searching, setSearching] = useState(false);
@@ -30,12 +30,6 @@ function App() {
   useState(() => {
     console.log(searching);
   });
-  
-  useEffect(() => {
-    
-    
-  })
-
 
   return (
     <div className="main-page">
@@ -69,9 +63,3 @@ function App() {
 }
 
 export default App;
-
-/* 
-  
-
-
- */
