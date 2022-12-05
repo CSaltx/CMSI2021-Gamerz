@@ -1,17 +1,18 @@
 import "./App.css";
 import { useEffect } from "react";
-import Home from "./components/Home";
-import Nav from "./components/Nav";
-import GameOfTheYear from "./components/GameOfTheYear";
-import Descriptor from "./components/Descriptor";
-import Footer from "./components/Footer";
-
+import Home from "../components/Home";
+import Nav from "../components/Nav";
+import GameOfTheYear from "../components/GameOfTheYear";
+import Descriptor from "../components/Descriptor";
+import Footer from "../components/Footer";
 
 function App() {
-  const API_KEY = "ed4d749789a64b878e8ab911afbb925c"; // add to env here
-  const url = `https://rawg-video-games-database.p.rapidapi.com/games?key=${API_KEY}`;
+  const [searching, setSearching] = useState(false);
+  const [article, setArticle] = useState(null);
 
-  useEffect(() => {
+  const fetching = (urlExtension) => {
+    const API_KEY = "ed4d749789a64b878e8ab911afbb925c"; // add to env here
+    const url = `https://rawg-video-games-database.p.rapidapi.com/${urlExtension}?key=${API_KEY}`;
     const options = {
       method: "GET",
       headers: {
@@ -24,6 +25,10 @@ function App() {
       .then((response) => response.json())
       .then((response) => console.log(response))
       .catch((err) => console.error(err));
+  };
+
+  useState(() => {
+    console.log(searching);
   });
   
   useEffect(() => {
@@ -33,24 +38,40 @@ function App() {
 
 
   return (
-    <>
+    <div className="main-page">
       <div className="nav">
-        <Nav />
+        <Nav setSearching={setSearching} fetching={fetching} />
       </div>
-      <div className="home">
-        <Home />
-      </div>
-      <div className="goty">
-        <GameOfTheYear />
-      </div>
-      <div className="descriptor">
-        <Descriptor />
-      </div>
-      <div className="Footer">
-        <Footer />
-      </div>
-    </>
+      {!searching ? (
+        <div className="home-page">
+          <div className="home">
+            <Home />
+          </div>
+          <div className="goty">
+            <GameOfTheYear fetch={fetching} />
+          </div>
+          <div className="descriptor">
+            <Descriptor />
+          </div>
+          <div className="footer">
+            <Footer />
+          </div>
+        </div>
+      ) : !article ? (
+        <div className="results">
+          <h1>Hello YOU MADE IT</h1>
+        </div>
+      ) : (
+        <div className="result-article"></div>
+      )}
+    </div>
   );
 }
 
 export default App;
+
+/* 
+  
+
+
+ */
