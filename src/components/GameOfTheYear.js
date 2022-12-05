@@ -7,11 +7,13 @@ const GameOfTheYear = ({ fetch }) => {
         Games of the <span className="red">Year</span>
       </div>
       <div className="games">
-        {/* {fetch("games").map((key, value) => (
-          <div className="image" key={key}>
-            <img src="#"></img>
-            get value.image when calling fetchGames with correct url extension
-        )) */}
+        {fetch("games").map((value) => (
+          <div className="image">
+            <img src="#" />
+            <p></p>
+            {/*get value.image when calling fetchGames with correct url extension*/}
+          </div>
+        ))}
       </div>
     </div>
   );
