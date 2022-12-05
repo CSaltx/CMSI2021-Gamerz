@@ -23,13 +23,11 @@ function App() {
 
     fetch(url, options)
       .then((response) => response.json())
-      .then((response) => console.log(response))
+      .then((result) => {
+        console.log(result);
+      })
       .catch((err) => console.error(err));
   };
-
-  useState(() => {
-    console.log(searching);
-  });
 
   return (
     <div className="main-page">

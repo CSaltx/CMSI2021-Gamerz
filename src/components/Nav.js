@@ -1,4 +1,9 @@
+import { Routes, Route } from "react-router-dom";
 import React from "react";
+import { SignIn, SignOut } from "./authService";
+import Home from "./Home.js";
+import Genres from "../Genres.js";
+import About from "./About.js";
 import Input from "./Input.js";
 
 const Nav = ({ setSearching, fetching }) => {
@@ -8,6 +13,11 @@ const Nav = ({ setSearching, fetching }) => {
         <Input setSearching={setSearching} fetching={fetching} />
       </div>
       <div className="links">
+        {/* <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="genres" element={<Genres />} />
+          <Route path="about" element={<About />} />
+        </Routes> */}
         <a href="./" className="link">
           Home
         </a>
@@ -18,7 +28,9 @@ const Nav = ({ setSearching, fetching }) => {
           About
         </a>
       </div>
-      <div className="signIn"></div>
+      <div className="signIn">
+        <SignIn />
+      </div>
     </div>
   );
 };

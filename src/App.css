@@ -13,7 +13,6 @@
 .home-page {
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
-  scroll-padding: 24px;
   scroll-snap-points-y: repeat(100vh);
 }
 
@@ -30,6 +29,28 @@
   align-items: center;
   justify-content: flex-start;
   gap: 5vh;
+}
+
+.signIn {
+  height: 100%;
+  display: flex;
+  width: 100%;
+  align-content: center;
+  justify-content: flex-end;
+}
+
+.gz {
+  font-size: 2.5rem;
+  margin: 20px;
+}
+
+.signIn > button {
+  width: 39vh;
+  background-color: #313131;
+  border: none;
+  color: #848484;
+  font-size: 2rem;
+  font-family: Inter-Bold;
 }
 
 .search-button {
