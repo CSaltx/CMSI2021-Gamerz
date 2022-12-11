@@ -1,5 +1,3 @@
-import Nav from "./Nav.js";
-
 function Genres() {
   return (
     <>
