@@ -1,16 +1,18 @@
 import "./App.css";
 import { useState } from "react";
-import Home from "./components/Home";
 import Nav from "./components/Nav";
-import GameOfTheYear from "./components/GameOfTheYear";
-import Descriptor from "./components/Descriptor";
-import Footer from "./components/Footer";
+import HomePage from "./components/HomePage";
+import Article from "./components/Article";
+import Genres from "./components/Genres";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const [searching, setSearching] = useState(false);
   const [article, setArticle] = useState(null);
+  const [info, setInfo] = useState({});
+  const [games, setGames] = useState({});
 
-  const fetching = (urlExtension) => {
+  const fetching = (urlExtension, setData) => {
     const API_KEY = "ed4d749789a64b878e8ab911afbb925c"; // add to env here
     const url = `https://rawg-video-games-database.p.rapidapi.com/${urlExtension}?key=${API_KEY}`;
     const options = {
@@ -24,39 +26,40 @@ function App() {
     fetch(url, options)
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
+        setData(result);
       })
       .catch((err) => console.error(err));
   };
 
+  // window.onload = function () {
+  //   if (localStorage.getItem("hasCodeRunBefore") === null) {
+  //     fetching("games", setGames);
+  //     localStorage.setItem("hasCodeRunBefore", true);
+  //   }
+  // };
+
   return (
-    <div className="main-page">
-      <div className="nav">
-        <Nav setSearching={setSearching} fetching={fetching} />
+    <Router>
+      <div className="main-page">
+        <div className="nav">
+          <Nav setSearching={setSearching} info={info} fetching={fetching} />
+        </div>
+        {!searching ? (
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/genres" element={<Genres />} />
+          </Routes>
+        ) : !article ? (
+          <div className="results">
+            <h1>Hello YOU MADE IT</h1>
+          </div>
+        ) : (
+          <div className="result-article">
+            <Article data={article} />
+          </div>
+        )}
       </div>
-      {!searching ? (
-        <div className="home-page">
-          <div className="home">
-            <Home />
-          </div>
-          <div className="goty">
-            <GameOfTheYear fetch={fetching} />
-          </div>
-          <div className="descriptor">
-            <Descriptor />
-          </div>
-          <div className="footer">
-            <Footer />
-          </div>
-        </div>
-      ) : !article ? (
-        <div className="results">
-          <h1>Hello YOU MADE IT</h1>
-        </div>
-      ) : (
-        <div className="result-article"></div>
-      )}
-    </div>
+    </Router>
   );
 }
 

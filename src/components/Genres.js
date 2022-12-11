@@ -1,12 +1,10 @@
-import Nav from "./components/Nav.js";
+import Nav from "./Nav.js";
 
 function Genres() {
   return (
     <>
-      <div className="id">
-        <Nav />
-      </div>
       <div className="genre-list">
+        <h1 className="red bold">Hello There</h1>
         <div className="">
           <img />
         </div>

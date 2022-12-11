@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
-import { auth } from "./firebaseConfig";
+import { auth } from "../components/firebaseConfig";
+import userIcon from "./userIcon.png";
 
 export function SignIn() {
   return (
     <button onClick={() => signInWithPopup(auth, new GoogleAuthProvider())}>
-      <img src="#" />
-      Sign In
+      <img src={userIcon} alt="" />
+      <h2>Sign In</h2>
     </button>
   );
 }

@@ -30,7 +30,6 @@
   justify-content: flex-start;
   gap: 5vh;
 }
-
 .signIn {
   height: 100%;
   display: flex;
@@ -50,7 +49,19 @@
   border: none;
   color: #848484;
   font-size: 2rem;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   font-family: Inter-Bold;
+}
+.signIn > button > h2 {
+  font-size: 4.712vh;
+  margin-right: 2.5vh;
+}
+
+.signIn > button > img {
+  width: 15vh;
+  height: auto;
 }
 
 .search-button {
@@ -87,13 +98,12 @@ a:active {
 }
 
 .home {
-  width: calc(100%-30vh);
+  width: 100%;
   height: 85.8vh;
   background-color: #1c1b1b;
   display: grid;
-  grid-column: repeat(2, 1fr);
   align-items: center;
-  padding-left: 30vh;
+  grid-column: repeat(2, 1fr);
   margin: 0;
 }
 
@@ -112,6 +122,7 @@ a:active {
   font-family: Inter;
   color: #c3c3c3;
   width: fit-content;
+  padding-left: 30vh;
 }
 
 .red-subtext {
@@ -131,14 +142,23 @@ a:active {
   color: #111235;
   font-family: Inter;
   font-size: 8.66vh;
-  margin-top: 19.3vh;
   margin-left: 14.9vh;
   text-transform: uppercase;
+  overflow-y: scroll;
 }
 
 .games {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10rem;
   margin: 7vh 15.5vh 0 15.5vh;
+}
+
+.images {
+  float: left;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 
 .red {

@@ -1,21 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-const Input = ({ fetching, setSearching }) => {
+const Input = ({ fetching, setSearching, info }) => {
   const [value, setValue] = useState("Enter Game");
   const [data, setData] = useState([]);
 
-  const submit = async (e) => {
+  const submit = (e) => {
     e.preventDefault();
     setSearching(true);
-    let obj = await fetching(`games/${value}`);
-    console.log(obj);
-    setData(obj);
+    fetching(`games/${value}`);
     setValue("");
-  };
-
-  useEffect(() => {
     console.log(data);
-  }, [data]);
+  };
 
   return (
     <div>

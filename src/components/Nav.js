@@ -1,16 +1,15 @@
-import { Routes, Route } from "react-router-dom";
-import React from "react";
-import { SignIn, SignOut } from "./authService";
-import Home from "./Home.js";
-import Genres from "../Genres.js";
-import About from "./About.js";
+import React, { useState } from "react";
+import { SignIn, SignOut } from "../services/authService";
+import { Link } from "react-router-dom";
 import Input from "./Input.js";
 
-const Nav = ({ setSearching, fetching }) => {
+const Nav = ({ setSearching, fetching, info }) => {
+  const [user, setUser] = useState(null);
+
   return (
     <div className="nav">
       <div className="search-bar">
-        <Input setSearching={setSearching} fetching={fetching} />
+        <Input setSearching={setSearching} fetching={fetching} info={info} />
       </div>
       <div className="links">
         {/* <Routes>
@@ -18,19 +17,17 @@ const Nav = ({ setSearching, fetching }) => {
           <Route path="genres" element={<Genres />} />
           <Route path="about" element={<About />} />
         </Routes> */}
-        <a href="./" className="link">
+        <Link to="/" className="link">
           Home
-        </a>
-        <a href="#" className="link">
+        </Link>
+        <Link to="/genres" className="link">
           Genres
-        </a>
-        <a href="#" className="link">
+        </Link>
+        <Link to="/about" className="link">
           About
-        </a>
+        </Link>
       </div>
-      <div className="signIn">
-        <SignIn />
-      </div>
+      <div className="signIn">{!user ? <SignIn /> : <SignOut />}</div>
     </div>
   );
 };

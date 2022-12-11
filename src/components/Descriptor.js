@@ -4,7 +4,7 @@ const Descriptor = () => {
   return (
     <div className="descriptor-page">
       <div className="descriptor-content">
-        <p className="bold red">Gamerz</p>
+        <p className="bold red gamerz">Gamerz</p>
         <h3 className="analytics-title">
           Analytics for your favorite games
           <br /> Anytime, Anywhere.

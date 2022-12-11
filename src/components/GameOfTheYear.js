@@ -1,7 +1,6 @@
 import React from "react";
 
-const GameOfTheYear = ({ fetch }) => {
-  const games = fetch("games");
+const GameOfTheYear = ({ games }) => {
   return (
     <div>
       <div className="gz bold">
@@ -11,13 +10,18 @@ const GameOfTheYear = ({ fetch }) => {
         Games of the <span className="red">Year</span>
       </div>
       <div className="games">
-        {/* {games.results.map((value, index) => (
-          <div className="image">
-            <img src="#" />
-            <p></p>
-            {/* get value.image when calling fetchGames with correct url extension
-          </div>
-        ))} */}
+        {games?.results &&
+          games.results.map((value, index) => (
+            <div className="images" key={index}>
+              {value.background_image && (
+                <img
+                  src={value.background_image}
+                  className="image"
+                  alt={value.name}
+                />
+              )}
+            </div>
+          ))}
       </div>
     </div>
   );
