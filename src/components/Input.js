@@ -7,7 +7,7 @@ const Input = ({ fetching, setSearching, info }) => {
   const submit = (e) => {
     e.preventDefault();
     setSearching(true);
-    fetching(`games/${value}`);
+    fetching(`games/${value}`, setData);
     setValue("");
     console.log(data);
   };

@@ -24,6 +24,7 @@
   justify-content: flex-start;
   gap: 5vh;
 }
+
 .signIn {
   height: 100%;
   display: flex;
@@ -37,7 +38,7 @@
   margin: 20px;
 }
 
-.signIn > button {
+.signIn-btn {
   width: 39vh;
   background-color: #313131;
   border: none;
@@ -49,12 +50,23 @@
   font-family: Inter-Bold;
 }
 
-.signIn > button > h2 {
+.signOut-btn {
+  width: 20vh;
+  height: 100%;
+  background-color: #313131;
+  border: none;
+  color: #848484;
+  font-size: 2vh;
+  align-items: center;
+  font-family: Inter-Bold;
+}
+
+.signIn-btn > h2 {
   font-size: 4.712vh;
   margin-right: 2.5vh;
 }
 
-.signIn > button > img {
+.signIn-btn > img {
   width: 15vh;
   height: auto;
 }

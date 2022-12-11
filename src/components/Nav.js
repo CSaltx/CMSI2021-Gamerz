@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { SignIn, SignOut } from "../services/authService";
+import { SignIn, SignOut, useAuthentication } from "../services/authService";
 import { Link } from "react-router-dom";
 import Input from "./Input.js";
 
 const Nav = ({ setSearching, fetching, info }) => {
-  const [user, setUser] = useState(null);
+  const user = useAuthentication();
 
   return (
     <div className="nav">

@@ -5,7 +5,10 @@ import userIcon from "./userIcon.png";
 
 export function SignIn() {
   return (
-    <button onClick={() => signInWithPopup(auth, new GoogleAuthProvider())}>
+    <button
+      className="signIn-btn"
+      onClick={() => signInWithPopup(auth, new GoogleAuthProvider())}
+    >
       <img src={userIcon} alt="" />
       <h2>Sign In</h2>
     </button>
@@ -15,8 +18,10 @@ export function SignIn() {
 export function SignOut() {
   return (
     <div>
-      Hello, {auth.currentUser.displayName} &nbsp;
-      <button onClick={() => signOut(auth)}>Sign Out</button>
+      {/* Hello, {auth.currentUser.displayName} &nbsp; Will be added in user page probably */}
+      <button className="signOut-btn" onClick={() => signOut(auth)}>
+        <h2>Sign Out</h2>
+      </button>
     </div>
   );
 }

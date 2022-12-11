@@ -13,12 +13,12 @@ function App() {
   const [games, setGames] = useState({});
 
   const fetching = (urlExtension, setData) => {
-    const API_KEY = "ed4d749789a64b878e8ab911afbb925c"; // add to env here
+    const API_KEY = "1fc9d744ff1c4500a96bcd1495506802"; // add to env here
     const url = `https://rawg-video-games-database.p.rapidapi.com/${urlExtension}?key=${API_KEY}`;
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "1a9825ff6emshff21bdc09edce87p1c3972jsn07abe3462b5f",
+        "X-RapidAPI-Key": "f775d4cdacmshde98a298a5737b2p10f444jsn13cdff795cc0",
         "X-RapidAPI-Host": "rawg-video-games-database.p.rapidapi.com",
       },
     };
