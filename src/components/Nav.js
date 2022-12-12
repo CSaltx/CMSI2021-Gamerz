@@ -12,11 +12,6 @@ const Nav = ({ setSearching, fetching, info }) => {
         <Input setSearching={setSearching} fetching={fetching} info={info} />
       </div>
       <div className="links">
-        {/* <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="genres" element={<Genres />} />
-          <Route path="about" element={<About />} />
-        </Routes> */}
         <Link to="/" className="link">
           Home
         </Link>

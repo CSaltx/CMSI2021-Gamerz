@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+## Gamerz
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### A new way to find your next generation of gaming!
 
-## Available Scripts
+<div align="center">
+  
+  ![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+  ![Firebase](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)
+  ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+  ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+  ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+  
+</div>
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Gamerz](#gamerz)
+  - [A new way to find your next generation of gaming!](#a-new-way-to-find-your-next-generation-of-gaming)
+- [Table of Contents](#table-of-contents)
+  - [General Project Information](#general-project-information)
+  - [Introduction](#introduction)
+  - [Information](#information)
+  - [Documentation](#documentation)
+  - [Technologies](#technologies)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### General Project Information
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Title:** Project 4 - Gamerz <br/>
+**Department:** Computer Science
 
-### `npm test`
+**Name:** Coby Schumitzky<br/>
+**Name:** Jerahmeel Mendoza<br/>
+**Name:** Thomas Powell<br/>
+**Date:** 12/16/2022
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Course:** Website Application Development<br/>
+**Section:** CMSI 2021
 
-### `npm run build`
+### Introduction
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Have you ever felt burnt out of a game? A game that once brought you joy, now feeling empty.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+That is where this website comes in, providing you with real-time updates and up-to-date reccomendations based on your favorite game. This website was built using a diverse tech stack based around the React Javascript framework. We also used firebase and firestore for its NoSQL (document-based) database and for its hosting capabilities.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This website aims to provide you with the spark that once highlighted your days and gave you a drive to get better or a relief from your everyday life. Get to gaming:
 
-### `npm run eject`
+<img src="https://media.tenor.com/Lu_5jCElEWkAAAAC/start-press-button.gif" width=300 />
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Information
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project was built using the React JS framework alongside React Router, CSS, and Firebase utilities to build this application. We used various components to build this website from the ground up!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+We integrated Firebase and Firestore to help with the hosting but also to provide a document-based NoSQL database to keep track of user's liked games to provide a more interactive, personalized experience to end-users.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**_NOTE:_** See Documentation section for information on how to download and run locally or visit url provided above to explore the website.
 
-## Learn More
+### Documentation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<details><summary><b>Show instructions for installation</b></summary>
+  <br/>
+First, Click Code on main repo page to get HTTPS or SSH url and then open personal terminal (for this demonstration we will use Mac terminal) <br />
+  
+<br />In your terminal (Mac Terminal as example): <br />
+1. Clone repo
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+  $ git clone {enter url here}
+```
 
-### Code Splitting
+2. CD into folder
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```sh
+  $ cd gamedev
+```
 
-### Analyzing the Bundle Size
+3. If using VSCode with adequate setup, otherwise skip:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```sh
+  $ code .
+```
 
-### Making a Progressive Web App
+> **_NOTE:_** the API key was used in a .env file and was not added to the GitHub Repository for security purposes so you must make an API key with RAWGApi to run and ensure that it is setup using the requisite .env file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+</details>
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Technologies
 
-### Deployment
+Project was created with:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Node version: 19.1.0
+- React version: 18.2.0
+- React Router version: 6.4.4
+- Firebase version: 9.14.0
