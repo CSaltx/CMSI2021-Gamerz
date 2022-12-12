@@ -13,11 +13,12 @@
 </div>
 
 ## Table of Contents
-  - [General Project Information](#general-project-information)
-  - [Introduction](#introduction)
-  - [Information](#information)
-  - [Documentation](#documentation)
-  - [Technologies](#technologies)
+
+- [General Project Information](#general-project-information)
+- [Introduction](#introduction)
+- [Information](#information)
+- [Documentation](#documentation)
+- [Technologies](#technologies)
 
 ### General Project Information
 
