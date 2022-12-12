@@ -357,4 +357,9 @@ a:active {
     padding: 5vh;
     place-items: center;
   }
+
+  div.my-games {
+    background-color: #2e2c2c;
+    color: #ffffff;
+  }
 }

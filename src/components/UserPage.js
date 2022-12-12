@@ -12,7 +12,7 @@ function UserPage({ userName, myGames }) {
       <div className="user-page">
         <h1 className="bold">{userName} </h1>
         <div className="my-games">
-          <span className="bold">My Games</span>
+          <span className="bold">MY GAMES</span>
           <div className="games">
             <div className="images">
               <img src={overwatch2} className="image" alt="Overwatch2" />

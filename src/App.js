@@ -7,12 +7,14 @@ import Genres from "./components/Genres";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import UserPage from "./components/UserPage";
 import { auth } from "./components/firebaseConfig";
+import { SignIn, SignOut, useAuthentication } from "./services/authService";
 
 function App() {
   const [searching, setSearching] = useState(false);
   const [article, setArticle] = useState(null);
   const [info, setInfo] = useState({});
   const [games, setGames] = useState({});
+  const user = useAuthentication();
 
   const fetching = (urlExtension, setData) => {
     const API_KEY = "1fc9d744ff1c4500a96bcd1495506802"; // add to env here
@@ -50,10 +52,14 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/genres" element={<Genres />} />
-            <Route
-              path="/user"
-              element={<UserPage userName={auth.currentUser.displayName} />}
-            />
+            {!user ? (
+              <Route path="/" element={<HomePage />} />
+            ) : (
+              <Route
+                path="/user"
+                element={<UserPage userName={auth.currentUser.displayName} />}
+              />
+            )}
           </Routes>
         ) : !article ? (
           <div className="results">
