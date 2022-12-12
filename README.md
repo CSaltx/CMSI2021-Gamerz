@@ -13,10 +13,6 @@
 </div>
 
 ## Table of Contents
-
-- [Gamerz](#gamerz)
-  - [A new way to find your next generation of gaming!](#a-new-way-to-find-your-next-generation-of-gaming)
-- [Table of Contents](#table-of-contents)
   - [General Project Information](#general-project-information)
   - [Introduction](#introduction)
   - [Information](#information)
@@ -31,6 +27,7 @@
 **Name:** Coby Schumitzky<br/>
 **Name:** Jerahmeel Mendoza<br/>
 **Name:** Thomas Powell<br/>
+**Name:** Christine Li<br/>
 **Date:** 12/16/2022
 
 **Course:** Website Application Development<br/>
