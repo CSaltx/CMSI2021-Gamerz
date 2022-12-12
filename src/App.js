@@ -5,6 +5,8 @@ import HomePage from "./components/HomePage";
 import Article from "./components/Article";
 import Genres from "./components/Genres";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import UserPage from "./components/UserPage";
+import { auth } from "./components/firebaseConfig";
 
 function App() {
   const [searching, setSearching] = useState(false);
@@ -48,6 +50,10 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/genres" element={<Genres />} />
+            <Route
+              path="/user"
+              element={<UserPage userName={auth.currentUser.displayName} />}
+            />
           </Routes>
         ) : !article ? (
           <div className="results">

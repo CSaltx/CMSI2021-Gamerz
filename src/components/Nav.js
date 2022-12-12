@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { SignIn, SignOut, useAuthentication } from "../services/authService";
 import { Link } from "react-router-dom";
 import Input from "./Input.js";
+import { auth } from "./firebaseConfig";
 
 const Nav = ({ setSearching, fetching, info }) => {
   const user = useAuthentication();
@@ -22,7 +23,18 @@ const Nav = ({ setSearching, fetching, info }) => {
           About
         </Link>
       </div>
-      <div className="signIn">{!user ? <SignIn /> : <SignOut />}</div>
+      <div className="signIn">
+        {!user ? (
+          <SignIn />
+        ) : (
+          <div>
+            <Link to="/user" className="link">
+              {auth.currentUser.displayName}
+            </Link>
+            <SignOut />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
