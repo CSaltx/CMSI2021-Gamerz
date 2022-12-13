@@ -20,6 +20,7 @@ const LikeOnClick = () => {
   )
 };
 
+const Article = ({ article }) => {
   return (
     <>
       <div>
