@@ -45,7 +45,6 @@
 
 .signIn-btn,
 .signOut-btn {
-  width: 39vh;
   background-color: #313131;
   border: none;
   color: #848484;
@@ -59,6 +58,7 @@
 }
 
 .signIn-btn {
+  width: 39vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -349,6 +349,7 @@ a:active {
 
 .userInfo {
   justify-content: flex-end;
+  height: 14.2vh;
 }
 
 .user-page {
