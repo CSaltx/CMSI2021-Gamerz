@@ -29,7 +29,7 @@ const Nav = ({ setSearching, fetching, info }) => {
         ) : (
           <div className="userInfo">
             <Link to="/user" className="link">
-              <img src={auth.currentUser.photoURL} alt="" />
+              <img src={auth.currentUser.photoURL} alt="profile photo" />
             </Link>
             <SignOut />
           </div>
