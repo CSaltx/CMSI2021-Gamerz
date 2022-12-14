@@ -321,6 +321,25 @@ a:active {
   border: none;
 }
 
+.find-games-button {
+  margin: 10vh 0 0 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #756666;
+  color: #fff;
+  border-radius: 20px;
+  border-style: outset;
+  border-color: #756666;
+  border-width: 0.5rem;
+  cursor: pointer;
+  height: 10vh;
+  width: 40vh;
+  font-family: Inter-Bold;
+  font-size: 4vh;
+}
+
 .results > h1 {
   margin: 0;
 }
@@ -339,12 +358,13 @@ a:active {
 
 .my-games {
   background-color: #2e2c2c;
-  color: rgb(240, 230, 217);
+  height: 50vh;
 }
 
 .my-games > h1 {
   margin: 0;
   padding: 5vh 0 0 10vh;
+  color: rgb(240, 230, 217);
 }
 
 .userInfo {

@@ -77,7 +77,7 @@ function App() {
             ) : (
               <Route
                 path="/user"
-                element={<UserPage user={auth.currentUser} />}
+                element={<UserPage user={auth.currentUser} myGames={null} />}
               />
             )}
           </Routes>
