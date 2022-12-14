@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { SignIn, SignOut, useAuthentication } from "../services/authService";
 import { Link } from "react-router-dom";
 import Input from "./Input.js";
@@ -8,7 +8,7 @@ const Nav = ({ setSearching, fetching, info }) => {
   const user = useAuthentication();
 
   return (
-    <div className="nav">
+    <div className="nav navArea">
       <div className="search-bar">
         <Input setSearching={setSearching} fetching={fetching} info={info} />
       </div>

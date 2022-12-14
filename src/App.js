@@ -35,6 +35,21 @@ function App() {
       .catch((err) => console.error(err));
   };
 
+  const displayNav = () => {
+    const nav = document.querySelector("div.nav.navArea");
+    const navArea = document.querySelector("div.nav");
+    if (nav.style.display === "none") {
+      nav.style.display = "grid";
+      nav.style.gridTemplateColumn = "repeat(3, 1vh)";
+      nav.style.justifyItems = "center";
+      nav.style.textAlign = "center";
+      navArea.style.height = "60vh";
+    } else {
+      nav.style.display = "none";
+      navArea.style.height = "14.2vh";
+    }
+  };
+
   // window.onload = function () {
   //   if (localStorage.getItem("hasCodeRunBefore") === null) {
   //     fetching("games", setGames);
@@ -46,7 +61,10 @@ function App() {
     <Router>
       <div className="main-page">
         <div className="nav">
-          <Nav setSearching={setSearching} info={info} fetching={fetching} />
+          <button className="expand-button" onClick={displayNav}>
+            <i className="fa-solid fa-bars fa-inverse fa-2x"></i>
+          </button>
+          {<Nav setSearching={setSearching} info={info} fetching={fetching} />}
         </div>
         {!searching ? (
           <Routes>
