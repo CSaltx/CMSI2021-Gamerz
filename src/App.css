@@ -295,6 +295,12 @@ a:active {
   margin: 0;
 }
 
+.expand-button {
+  display: none;
+  background: transparent;
+  border: none;
+}
+
 .results > h1 {
   margin: 0;
 }
@@ -311,7 +317,11 @@ a:active {
   border-left: thick solid #ff0000;
 }
 
-@media screen and (max-width: 1050px) {
+a.link {
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
   .home-image {
     display: none;
   }
@@ -328,7 +338,31 @@ a:active {
   }
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 1000px) {
+  .expand-button {
+    display: inline-flex;
+    padding: 3vh;
+  }
+
+  div.nav {
+    display: flex;
+    place-content: center;
+    place-items: center;
+  }
+
+  div.nav.navArea {
+    display: none;
+  }
+
+  .signIn > div > a.link {
+    margin: 0;
+  }
+
+  .signIn {
+    align-items: center;
+    justify-content: center;
+  }
+
   .images {
     grid-template-columns: repeat(1, 1fr);
     place-items: center;
@@ -361,5 +395,48 @@ a:active {
   div.my-games {
     background-color: #2e2c2c;
     color: #ffffff;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .top-portion {
+    font-size: 2vh;
+  }
+  .gz {
+    font-size: 2vh;
+  }
+
+  .new-you > h2 {
+    font-size: 2vh;
+  }
+
+  .gotys {
+    font-size: 2vh;
+  }
+
+  .images > img {
+    width: 200px;
+    height: auto;
+    margin: 0;
+  }
+
+  .analytics-title {
+    font-size: 2vh;
+  }
+
+  .analytics-subtitle {
+    font-size: 1vh;
+    width: auto;
+  }
+
+  .top-portion > button {
+    font-size: 3vh;
+    color: white;
+    height: 8vh;
+    width: 33vh;
+  }
+
+  .list-item > p {
+    font-size: 2vh;
   }
 }
