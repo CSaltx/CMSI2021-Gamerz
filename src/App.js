@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import HomePage from "./components/HomePage";
 import Article from "./components/Article";
 import Genres from "./components/Genres";
+import About from "./components/About";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import UserPage from "./components/UserPage";
 import { auth } from "./components/firebaseConfig";
@@ -70,6 +71,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/genres" element={<Genres />} />
+            <Route path="/about" element={<About />}></Route>
             {!user ? (
               <Route path="/" element={<HomePage />} />
             ) : (

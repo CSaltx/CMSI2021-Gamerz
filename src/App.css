@@ -357,6 +357,22 @@ a:active {
   text-transform: capitalize;
 }
 
+.black {
+  color: black;
+}
+
+.about-page {
+  background-color: #1c1b1b;
+  height: 100vh;
+  display: grid;
+  text-align: center;
+}
+
+.team {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
 @media screen and (max-width: 1200px) {
   .home-image {
     display: none;
