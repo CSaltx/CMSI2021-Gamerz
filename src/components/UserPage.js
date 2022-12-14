@@ -6,13 +6,14 @@ import overwatch2 from "../images/overwatch2.png";
 import ragnarok from "../images/ragnarok.png";
 import valorant from "../images/valorant.png";
 
-function UserPage({ userName, myGames }) {
+function UserPage({ user, myGames }) {
   return (
     <>
       <div className="user-page">
-        <h1 className="bold">{userName} </h1>
+        <img src={user.photoURL} alt="profile photo" />
+        <h1 className="bold">{user.displayName} </h1>
         <div className="my-games">
-          <span className="bold">MY GAMES</span>
+          <h1 className="bold">MY GAMES</h1>
           <div className="games">
             <div className="images">
               <img src={overwatch2} className="image" alt="Overwatch2" />

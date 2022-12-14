@@ -14,16 +14,20 @@
   align-self: end;
 }
 
-.nav {
+.nav,
+.userInfo {
   width: 100%;
   background-size: cover;
-  height: 14.2vh;
   background-color: black;
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.nav {
   justify-content: flex-start;
   gap: 5vh;
+  height: 14.2vh;
 }
 
 .signIn {
@@ -317,8 +321,18 @@ a:active {
   border-left: thick solid #ff0000;
 }
 
-a.link {
-  text-align: center;
+div.my-games {
+  background-color: #2e2c2c;
+  color: #ffffff;
+  font-size: 3vh;
+}
+
+.userInfo {
+  justify-content: flex-end;
+}
+
+.user-page {
+  margin-left: 3vh;
 }
 
 @media screen and (max-width: 1200px) {
@@ -390,11 +404,6 @@ a.link {
     grid-template-columns: repeat(1, 1fr);
     padding: 5vh;
     place-items: center;
-  }
-
-  div.my-games {
-    background-color: #2e2c2c;
-    color: #ffffff;
   }
 }
 
