@@ -14,7 +14,8 @@
   align-self: end;
 }
 
-.nav {
+.nav,
+.userInfo {
   width: 100%;
   background-size: cover;
   height: 14.2vh;
@@ -361,5 +362,8 @@ a:active {
   div.my-games {
     background-color: #2e2c2c;
     color: #ffffff;
+  }
+
+  .userInfo {
   }
 }
