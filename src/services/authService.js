@@ -9,7 +9,7 @@ export function SignIn() {
       className="signIn-btn"
       onClick={() => signInWithPopup(auth, new GoogleAuthProvider())}
     >
-      <img src={userIcon} alt="" />
+      <img src={userIcon} alt="user icon" />
       <h2>Sign In</h2>
     </button>
   );

@@ -10,9 +10,14 @@ function UserPage({ user, myGames }) {
   return (
     <>
       <div className="user-page">
-        <img src={user.photoURL} alt="profile photo" />
-        <h1 className="bold">{user.displayName} </h1>
+        <div className="profile">
+          <img src={user.photoURL} alt="profile photo" />
+          <h1 className="bold">{user.displayName} </h1>
+        </div>
         <div className="my-games">
+          {/* display "Find Games" if database is empty*/}
+          {/* add background imgs */}
+          {/* reduce gap between imgs */}
           <h1 className="bold">MY GAMES</h1>
           <div className="games">
             <div className="images">
