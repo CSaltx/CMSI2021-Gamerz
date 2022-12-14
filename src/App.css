@@ -330,9 +330,9 @@ a:active {
   background-color: #756666;
   color: #fff;
   border-radius: 20px;
-  border-style: outset;
+  /*border-style: outset;
   border-color: #756666;
-  border-width: 0.5rem;
+  border-width: 0.5rem;*/
   cursor: pointer;
   height: 10vh;
   width: 40vh;
@@ -358,13 +358,17 @@ a:active {
 
 .my-games {
   background-color: #2e2c2c;
-  height: 50vh;
+  min-height: 50vh;
+  color: rgb(240, 230, 217);
 }
 
 .my-games > h1 {
   margin: 0;
   padding: 5vh 0 0 10vh;
-  color: rgb(240, 230, 217);
+}
+
+.no-games {
+  padding: 2vh 0 0 10vh;
 }
 
 .userInfo {

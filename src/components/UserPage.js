@@ -24,9 +24,12 @@ function UserPage({ user, myGames }) {
           {/* fetch data from database */}
           <h1 className="bold">MY GAMES</h1>
           {!myGames ? (
-            <button onClick={findOnClick} className="find-games-button">
-              FIND A GAME
-            </button>
+            <div>
+              <h2 className="no-games"> Nothing to see here yet</h2>
+              <button onClick={findOnClick} className="find-games-button">
+                FIND A GAME
+              </button>
+            </div>
           ) : (
             <div className="games">
               <div className="images">
