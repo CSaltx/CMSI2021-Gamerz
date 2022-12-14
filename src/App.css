@@ -355,7 +355,7 @@ a:active {
 .user-page {
   font-size: 2vh;
   background-color: rgb(240, 230, 217);
-  text-transform: capitalize;
+  /*text-transform: uppercase;*/
 }
 
 @media screen and (max-width: 1200px) {
