@@ -371,7 +371,12 @@ a:active {
 
 .team {
   margin-top: 10vh;
-  margin-bottom: 10vh;
+  margin-bottom: 4vh;
+}
+
+.about-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 @media screen and (max-width: 1200px) {
@@ -392,6 +397,14 @@ a:active {
 }
 
 @media screen and (max-width: 1000px) {
+  .about-page {
+    height: 100%;
+  }
+
+  .about-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .expand-button {
     display: inline-flex;
     padding: 3vh;
@@ -447,6 +460,10 @@ a:active {
 }
 
 @media screen and (max-width: 540px) {
+  .about-info {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   .top-portion {
     font-size: 2vh;
   }
