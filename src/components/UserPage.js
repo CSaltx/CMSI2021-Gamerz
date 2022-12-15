@@ -22,7 +22,7 @@ function UserPage({ user, myGames }) {
           {/* add background imgs */}
           {/* fetch data from database */}
           <h1 className="bold">MY GAMES</h1>
-          {!myGames ? (
+          {myGames ? (
             <div>
               <h2 className="no-games"> liked games will show up here</h2>
               {/*<h2 className="no-games"> you have not liked any games</h2>*/}
