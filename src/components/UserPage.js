@@ -20,19 +20,19 @@ function UserPage({ user, myGames }) {
         </div>
         <div className="my-games">
           {/* add background imgs */}
-          {/* reduce gap between imgs */}
           {/* fetch data from database */}
           <h1 className="bold">MY GAMES</h1>
           {!myGames ? (
             <div>
-              <h2 className="no-games"> Nothing to see here yet</h2>
+              <h2 className="no-games"> liked games will show up here</h2>
+              {/*<h2 className="no-games"> you have not liked any games</h2>*/}
               <button onClick={findOnClick} className="find-games-button">
-                FIND A GAME
+                Find a Game
               </button>
             </div>
           ) : (
-            <div className="games">
-              <div className="images">
+            <div className="liked-games">
+              <div className="cover-images">
                 <img src={overwatch2} className="image" alt="Overwatch2" />
                 <img src={valorant} className="image" alt="Valorant" />
                 <img src={mw2} className="image" alt="Modern Warfare 2" />

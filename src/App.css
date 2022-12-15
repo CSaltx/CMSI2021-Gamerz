@@ -79,13 +79,19 @@
 
 .profile > img {
   width: 20vh;
-  height: auto;
   border-radius: 50%;
-  margin: 5vh 0 0 10vh;
+  margin: 10vh 0 0 0;
 }
 
 .profile > h1 {
-  margin: 2vh 0 5vh 10vh;
+  margin: 3vh 0 10vh 0;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #user-page-link > img {
@@ -187,6 +193,23 @@ a:active {
   height: 448px;
   object-fit: cover;
   margin-bottom: 2vh;
+}
+
+.liked-games {
+  padding: 5vh;
+}
+
+.cover-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1ch;
+  row-gap: 1ch;
+  justify-content: space-evenly;
+}
+
+.cover-images > img {
+  width: 100%;
+  height: 100%;
 }
 
 .red {
@@ -329,15 +352,13 @@ a:active {
   transform: translate(-50%, -50%);
   background-color: #756666;
   color: #fff;
-  border-radius: 20px;
-  /*border-style: outset;
-  border-color: #756666;
-  border-width: 0.5rem;*/
+  border-radius: 50px;
+  border: none;
   cursor: pointer;
   height: 10vh;
   width: 40vh;
   font-family: Inter-Bold;
-  font-size: 4vh;
+  font-size: 3vh;
 }
 
 .results > h1 {
@@ -358,17 +379,18 @@ a:active {
 
 .my-games {
   background-color: #2e2c2c;
-  min-height: 50vh;
+  min-height: 60vh;
   color: rgb(240, 230, 217);
+  text-align: center;
 }
 
 .my-games > h1 {
   margin: 0;
-  padding: 5vh 0 0 10vh;
+  padding-top: 5vh;
 }
 
 .no-games {
-  padding: 2vh 0 0 10vh;
+  padding: 2vh 0 0 0;
 }
 
 .userInfo {
