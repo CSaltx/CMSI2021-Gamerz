@@ -12,29 +12,7 @@ import { SignIn, SignOut, useAuthentication } from "./services/authService";
 
 function App() {
   const [searching, setSearching] = useState(false);
-  const [article, setArticle] = useState(null);
-  const [info, setInfo] = useState({});
-  const [games, setGames] = useState({});
   const user = useAuthentication();
-
-  const fetching = (urlExtension, setData) => {
-    const API_KEY = "1fc9d744ff1c4500a96bcd1495506802"; // add to env here
-    const url = `https://rawg-video-games-database.p.rapidapi.com/${urlExtension}?key=${API_KEY}`;
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "f775d4cdacmshde98a298a5737b2p10f444jsn13cdff795cc0",
-        "X-RapidAPI-Host": "rawg-video-games-database.p.rapidapi.com",
-      },
-    };
-
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((result) => {
-        setData(result);
-      })
-      .catch((err) => console.error(err));
-  };
 
   const displayNav = () => {
     const nav = document.querySelector("div.nav.navArea");
@@ -51,13 +29,6 @@ function App() {
     }
   };
 
-  // window.onload = function () {
-  //   if (localStorage.getItem("hasCodeRunBefore") === null) {
-  //     fetching("games", setGames);
-  //     localStorage.setItem("hasCodeRunBefore", true);
-  //   }
-  // };
-
   return (
     <Router>
       <div className="main-page">
@@ -65,31 +36,22 @@ function App() {
           <button className="expand-button" onClick={displayNav}>
             <i className="fa-solid fa-bars fa-inverse fa-2x"></i>
           </button>
-          {<Nav setSearching={setSearching} info={info} fetching={fetching} />}
+          {<Nav />}
         </div>
-        {!searching ? (
-          <Routes>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/game/:query" element={<Article />} />
+          <Route path="/genres" element={<Genres />} />
+          <Route path="/about" element={<About />}></Route>
+          {!user ? (
             <Route path="/" element={<HomePage />} />
-            <Route path="/genres" element={<Genres />} />
-            <Route path="/about" element={<About />}></Route>
-            {!user ? (
-              <Route path="/" element={<HomePage />} />
-            ) : (
-              <Route
-                path="/user"
-                element={<UserPage user={auth.currentUser} myGames={null} />}
-              />
-            )}
-          </Routes>
-        ) : !article ? (
-          <div className="results">
-            <h1>Hello YOU MADE IT</h1>
-          </div>
-        ) : (
-          <div className="result-article">
-            <Article data={article} />
-          </div>
-        )}
+          ) : (
+            <Route
+              path="/user"
+              element={<UserPage user={auth.currentUser} myGames={null} />}
+            />
+          )}
+        </Routes>
       </div>
     </Router>
   );
