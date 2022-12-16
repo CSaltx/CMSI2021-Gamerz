@@ -15,7 +15,7 @@
 }
 
 .nav,
-.userInfo {
+.user-buttons {
   width: 100%;
   background-size: cover;
   background-color: black;
@@ -25,9 +25,23 @@
 
 .nav {
   justify-content: flex-start;
-  gap: 5vh;
-  height: 14.2vh;
+  gap: 20px;
   align-items: center;
+}
+
+.user-buttons,
+.nav {
+  height: 6vmin;
+}
+
+.signIn-btn > img,
+#user-page-link > img {
+  border-radius: 50%;
+  height: 4vmin;
+}
+
+.signIn-btn > img {
+  background-color: #3e3e3e;
 }
 
 .signIn {
@@ -40,73 +54,63 @@
 
 .gz {
   font-size: 2.5rem;
-  margin: 20px;
+  margin: 2vw;
 }
 
 .signIn-btn,
 .signOut-btn {
-  background-color: #313131;
+  /*background-color: #313131;*/
   border: none;
-  color: #848484;
+  /*border-radius: 20%;*/
   align-items: center;
-  font-family: Inter-Bold;
+  background: transparent;
 }
 
 .signOut-btn {
-  width: 25vh;
+  width: 16vmin;
   height: 100%;
 }
 
 .signIn-btn {
-  width: 39vh;
+  width: 20vmin;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 3fr;
+  justify-items: center;
 }
 
-.signIn-btn > h2,
-.signOut-btn > h2 {
-  font-size: 4.712vh;
-}
-
-.signIn-btn > h2 {
-  margin-right: 3vh;
-}
-
-.signIn-btn > img {
-  width: 15vh;
-  height: auto;
-}
-
-.profile > img {
-  width: 20vh;
+.user-info > img {
+  width: 20vmin;
   border-radius: 50%;
-  margin: 7vh 0 0 0;
+  margin: 7vmin 0 0 0;
 }
 
-.profile > h1 {
-  margin: 3vh 0 7vh 0;
+.user-info > h1 {
+  margin: 3vmin 0 7vmin 0;
 }
 
-.profile {
+.user-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#user-page-link > img {
-  width: 14.2vh;
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-button {
   background-color: #3e3e3e;
-  font-family: Inter-Bold;
-  font-size: 20px;
+  font-family: Inter;
+  font-size: 1.5vmin;
   color: #c3c3c3;
   border: none;
   text-align: center;
-  width: 34vh;
-  height: 6.4vh;
+  width: 25vw;
+  height: 3vmin;
   border-radius: 0.9vh;
   margin-left: 4vh;
 }
@@ -116,19 +120,21 @@ a:visited,
 a:hover,
 a:active {
   text-decoration: none;
-  margin-left: 4vh;
+  margin-left: 4vw;
 }
 
-.link {
+.link,
+.signIn-btn > h2,
+.signOut-btn > h2 {
   color: #c3c3c3;
-  font-size: 3.3vh;
-  font-family: Inter-Bold;
+  font-size: 2vmin;
+  font-family: Inter;
 }
 
 .link:focus {
   color: white;
-  padding-bottom: 4vh;
-  border-bottom: 5px solid red;
+  padding-bottom: 1.2vh;
+  border-bottom: 0.3vh solid red;
 }
 
 .home {
@@ -196,7 +202,7 @@ a:active {
 }
 
 .liked-games {
-  padding: 7vh 5vh 5vh 5vh;
+  padding: 7vmin;
 }
 
 .cover-images {
@@ -344,7 +350,7 @@ a:active {
   border: none;
 }
 
-.find-games-button {
+.find-game-button {
   margin: 10vh 0 0 0;
   position: absolute;
   left: 50%;
@@ -379,27 +385,25 @@ a:active {
 
 .my-games {
   background-color: #2e2c2c;
-  min-height: 60vh;
+  /*height: auto !important; /* real browsers */
+  /*min-height: 100%;*/
   color: rgb(240, 230, 217);
   text-align: center;
+  min-height: 100vh;
 }
 
 .my-games > h1 {
   margin: 0;
-  padding-top: 7vh;
+  padding-top: 7vmin;
 }
 
-.no-games {
-  padding: 2vh 0 0 0;
-}
-
-.userInfo {
+.user-buttons {
   justify-content: flex-end;
-  height: 14.2vh;
+  align-items: center;
 }
 
 .user-page {
-  font-size: 2vh;
+  font-size: 2vmin;
   background-color: rgb(240, 230, 217);
   /*text-transform: uppercase;*/
 }
@@ -453,7 +457,7 @@ a:active {
 
   .expand-button {
     display: inline-flex;
-    padding: 3vh;
+    padding: 2vh;
   }
 
   div.nav {

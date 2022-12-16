@@ -5,6 +5,8 @@ import mw2 from "../images/mw2.png";
 import overwatch2 from "../images/overwatch2.png";
 import ragnarok from "../images/ragnarok.png";
 import valorant from "../images/valorant.png";
+import girl from "../images/userPage1.png";
+import guy from "../images/userPage2.png";
 
 const findOnClick = () => {
   window.location = "/genres";
@@ -15,8 +17,13 @@ function UserPage({ user, myGames }) {
     <>
       <div className="user-page">
         <div className="profile">
-          <img src={user.photoURL} alt="profile photo" />
-          <h1 className="bold">{user.displayName} </h1>
+          {/*
+          <img src={girl} alt="tracer" />
+          */}
+          <div className="user-info">
+            <img src={user.photoURL} alt="profile picture" />
+            <h1 className="bold">{user.displayName} </h1>
+          </div>
         </div>
         <div className="my-games">
           {/* add background imgs */}
@@ -24,9 +31,9 @@ function UserPage({ user, myGames }) {
           <h1 className="bold">MY GAMES</h1>
           {myGames ? (
             <div>
-              <h2 className="no-games"> liked games will show up here</h2>
+              <h2> liked games will show up here</h2>
               {/*<h2 className="no-games"> you have not liked any games</h2>*/}
-              <button onClick={findOnClick} className="find-games-button">
+              <button onClick={findOnClick} className="find-game-button">
                 Find a Game
               </button>
             </div>
