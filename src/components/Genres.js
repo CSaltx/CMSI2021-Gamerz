@@ -18,6 +18,3 @@ function Genres() {
       </div>
     </>
   );
-}
-
-export default Genres;

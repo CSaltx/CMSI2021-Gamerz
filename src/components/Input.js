@@ -1,26 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Input = ({ fetching, setSearching, info }) => {
-  const [value, setValue] = useState("");
-  const [data, setData] = useState([]);
+const Input = () => {
+  const navigate = useNavigate();
+  const queryRef = useRef(null);
 
-  const submit = (e) => {
-    e.preventDefault();
-    setSearching(true);
-    fetching(`games/${value}`, setData);
-    setValue("");
-    console.log(data);
-  };
+  const queryHandler = () => navigate(`/game/${queryRef.current.value}`);
 
   return (
     <div>
-      <form onSubmit={(e) => submit(e)}>
+      <form onSubmit={queryHandler}>
         <input
           type="text"
-          value={value}
+          ref={queryRef}
           placeholder="Enter Game Title"
           className="search-button"
-          onChange={(e) => setValue(e.target.value)}
         />
       </form>
     </div>

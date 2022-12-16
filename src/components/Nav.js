@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import Input from "./Input.js";
 import { auth } from "./firebaseConfig";
 
-const Nav = ({ setSearching, fetching, info }) => {
+const Nav = () => {
   const user = useAuthentication();
 
   return (
     <div className="nav navArea">
       <div className="search-bar">
-        <Input setSearching={setSearching} fetching={fetching} info={info} />
+        <Input />
       </div>
       <div className="links">
         <Link to="/" className="link">
