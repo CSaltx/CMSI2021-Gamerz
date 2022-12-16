@@ -1,23 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { SignIn, SignOut, useAuthentication } from "../services/authService";
-import { Link } from "react-router-dom";
-import { auth } from "./firebaseConfig";
-import wraith from "../images/wraith.png";
+import { useAuthentication } from "../services/authService";
 
 const LikeOnClick = () => {
   const user = useAuthentication();
-
-  !user ? (
-    <SignIn />
-  ) : (
-    <div>
-      <Link to="/user" className="link">
-        {auth.currentUser.displayName}
-      </Link>
-      <SignOut />
-    </div>
-  );
+  // add game to db
 };
 
 const Article = () => {
@@ -43,47 +30,54 @@ const Article = () => {
       .catch((err) => console.error(err));
   };
 
-  // window.onload = function () {
-  //   if (localStorage.getItem("hasCodeRunBefore") === null) {
-  //     fetching(`games/${params.query}`);
-  //     localStorage.setItem("hasCodeRunBefore", true);
-  //   }
-  // };
-
   useEffect(() => {
     fetching(`games/${params.query}`);
   }, []);
 
+  useEffect(() => {
+    console.log(info);
+  });
+
   return (
     <>
-      {info ? (
+      {info?.redirect === true ? (
+        <div className="redirect">
+          Cannot find the game, did you mean "{info.slug}"?
+        </div>
+      ) : (
         <>
-          <div>
-            <div className="content">
-              <h1 className="bold red">{info.id}</h1>
-              {/* <button onClick={LikeOnClick} className="like-button">
-      {/* insert heart icon for like button
-    </button> */}
+          <div className="article-content">
+            <div className="article-heading">
+              <h1 className="bold red">{info.name}</h1>
+              <p>Released: {info.released}</p>
             </div>
-            {/* <div className="article-image">
-              <img src={wraith} alt="" />
-            </div> */}
-          </div>
-          <div>
-            <p className="subtext">
-              Insert Description of game:
-              <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <div className="article-image">
+              <img
+                className="article-img"
+                src={info.background_image}
+                alt="article-image"
+                aria-hidden="true"
+              />
+            </div>
+            <div>
+              <p>{info.description_raw}</p>
+              <p className="bold red">
+                Genres:{" "}
+                {info.genres.map((obj, index) => (
+                  <span key={index}>{obj.name} </span>
+                ))}
+              </p>
+              <p>Twitch Count: {info.twitch_count}</p>
+              <p>
+                Website: <a href={info.website}>Click Here</a>
+              </p>
+              <p>Metacritic Score: {info.metacritic}</p>
+            </div>
+            <button onClick={LikeOnClick} className="like-button">
+              <i className="fa-solid fa-heart fa-2x"></i>
+            </button>
           </div>
         </>
-      ) : (
-        <div>"Cannot find the game"</div>
       )}
     </>
   );
