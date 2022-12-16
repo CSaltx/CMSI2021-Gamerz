@@ -1,4 +1,4 @@
-function Genres() {
+export function Genres() {
   return (
     <>
       <div className="genre-list">
@@ -18,3 +18,6 @@ function Genres() {
       </div>
     </>
   );
+}
+
+export default Genres;
