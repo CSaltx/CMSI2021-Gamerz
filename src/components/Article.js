@@ -61,12 +61,12 @@ const Article = () => {
             </div>
             <div>
               <p>{info.description_raw}</p>
-              <p className="bold red">
+              {/* <p className="bold red">
                 Genres:{" "}
                 {info.genres.map((obj, index) => (
                   <span key={index}>{obj.name} </span>
                 ))}
-              </p>
+              </p> */}
               <p>Twitch Count: {info.twitch_count}</p>
               <p>
                 Website: <a href={info.website}>Click Here</a>
