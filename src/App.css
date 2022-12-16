@@ -10,6 +10,23 @@
   font-weight: bold;
 }
 
+.description-article {
+  width: 130vmin;
+}
+
+.flex > h1 {
+  font-size: 2.5vmin;
+  font-family: Inter;
+  color: white;
+  display: grid;
+  place-content: center;
+}
+
+.article-content > div > p > a {
+  margin: 0;
+  color: white;
+}
+
 .redirect {
   width: 100vw;
   height: 100vh;
@@ -39,8 +56,14 @@
   background-color: #1c1b1b;
   color: white;
   display: grid;
-  place-content: center;
-  overflow: scroll;
+  grid-template-columns: repeat(1, 1fr);
+  place-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+button.like-button {
+  width: 100%;
 }
 
 .home-image {

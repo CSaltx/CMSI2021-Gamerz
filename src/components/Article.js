@@ -44,11 +44,16 @@ const Article = () => {
         <div className="redirect">
           Cannot find the game, did you mean "{info.slug}"?
         </div>
-      ) : (
+      ) : info?.detail !== "Not found." ? (
         <>
           <div className="article-content">
             <div className="article-heading">
-              <h1 className="bold red">{info.name}</h1>
+              <div className="flex">
+                <h1>{info.name}</h1>
+                <button onClick={LikeOnClick} className="like-button">
+                  <i className="fa-solid fa-heart fa-2x"></i>
+                </button>
+              </div>
               <p>Released: {info.released}</p>
             </div>
             <div className="article-image">
@@ -60,7 +65,7 @@ const Article = () => {
               />
             </div>
             <div>
-              <p>{info.description_raw}</p>
+              <p className="description-article">{info.description_raw}</p>
               {/* <p className="bold red">
                 Genres:{" "}
                 {info.genres.map((obj, index) => (
@@ -73,11 +78,10 @@ const Article = () => {
               </p>
               <p>Metacritic Score: {info.metacritic}</p>
             </div>
-            <button onClick={LikeOnClick} className="like-button">
-              <i className="fa-solid fa-heart fa-2x"></i>
-            </button>
           </div>
         </>
+      ) : (
+        <div className="redirect">No results found.</div>
       )}
     </>
   );
