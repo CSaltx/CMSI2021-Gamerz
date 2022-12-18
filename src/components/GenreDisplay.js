@@ -29,6 +29,10 @@ const GenreDisplay = () => {
     fetching(`genres`);
   }, []);
 
+  useEffect(() => {
+    console.log(genres);
+  });
+
   return (
     <div className="article-content">
       <h1 className="white">{params.query.toUpperCase()}</h1>
