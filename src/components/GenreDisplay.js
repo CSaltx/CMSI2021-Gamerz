@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 const GenreDisplay = () => {
   const params = useParams();
+  const genre = params.query;
   const [genres, setGenres] = useState();
 
   const fetching = (urlExtension) => {
@@ -28,18 +29,18 @@ const GenreDisplay = () => {
     fetching(`genres`);
   }, []);
 
-  useEffect(() => {
-    console.log(genres?.results[5].games);
-  });
-
   return (
     <div className="article-content">
       <h1 className="white">{params.query.toUpperCase()}</h1>
-      {genres.results[5].games.map((obj, index) => {
-        <span key={index}>
-          Name: {obj.name} Slug: {obj.slug}
-        </span>;
-      })}
+      {genres?.results ? (
+        <ul className="game-list">
+          {genres.results[genre].games.map((obj, index) => (
+            <li key={index}>{obj.name}</li>
+          ))}
+        </ul>
+      ) : (
+        "Loading..."
+      )}
     </div>
   );
 };
