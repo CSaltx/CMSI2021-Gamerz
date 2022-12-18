@@ -5,7 +5,7 @@ const Input = () => {
   const navigate = useNavigate();
   const queryRef = useRef(null);
 
-  const queryHandler = () => navigate(`/game/${queryRef.current.value}`);
+  const queryHandler = () => navigate(`/genre/${queryRef.current.value}`);
 
   return (
     <div>
