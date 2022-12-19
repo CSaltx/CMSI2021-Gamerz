@@ -405,6 +405,16 @@ a:active {
   background-color: #ff5353;
 }
 
+.game-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2vh;
+}
+
+.card {
+  background-color: white;
+}
+
 .buttons {
   display: flex;
   flex-direction: row;

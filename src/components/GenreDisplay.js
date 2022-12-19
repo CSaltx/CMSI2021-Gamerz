@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const GenreDisplay = () => {
   const params = useParams();
   const genre = params.query;
+  const ref = useRef();
+  const navigate = useNavigate();
+  const handleClick = () => navigate(`/game/`);
   const [genres, setGenres] = useState();
 
   const fetching = (urlExtension) => {
@@ -35,11 +39,18 @@ const GenreDisplay = () => {
 
   return (
     <div className="article-content">
-      <h1 className="white">{params.query.toUpperCase()}</h1>
       {genres?.results ? (
         <ul className="game-list">
           {genres.results[genre].games.map((obj, index) => (
-            <li key={index}>{obj.name}</li>
+            <div key={index} className="card">
+              <div id="image"></div>
+              <div id="info">
+                <h3 className="black">{obj.name}</h3>
+                <button ref={ref} onClick={handleClick}>
+                  View
+                </button>
+              </div>
+            </div>
           ))}
         </ul>
       ) : (
