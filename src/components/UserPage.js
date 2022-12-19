@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { db } from "./firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
 import girl from "../images/userPage1.png";
 import guy from "../images/userPage2.png";
 
-function UserPage({ user, myGames }) {
+function UserPage({ user }) {
   const [likedGames, setLikedGames] = useState();
 
   const findOnClick = () => {
@@ -28,14 +28,13 @@ function UserPage({ user, myGames }) {
     <>
       <div className="user-page">
         <div className="profile">
-          {/* add background imgs */}
-          {/*
-          <img src={girl} alt="tracer" />
-          */}
+          {/* add background imgs, fix nav bar and my games responsiveness, remove games */}
+          {/*<img src={girl} alt="tracer" />*/}
           <div className="user-info">
             <img src={user.photoURL} alt="profile picture" />
             <h1 className="bold">{user.displayName} </h1>
           </div>
+          {/*<img src={guy} alt="tracer" />*/}
         </div>
         <div className="my-games">
           <h2 className="bold">MY GAMES</h2>

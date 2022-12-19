@@ -115,18 +115,18 @@
   align-self: center;
 }
 
-h1.article-title  {
+h1.article-title {
   font-size: 600%;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   position: center;
   background-color: #3e3e3e;
   width: 100vw;
 }
 
-p.article-release   {
+p.article-release {
   font-size: 150%;
   text-align: center;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 .article-content {
@@ -141,14 +141,13 @@ p.article-release   {
   overflow-x: hidden;
 }
 
-.article-description  {
+.article-description {
   margin-bottom: 3%;
 }
 
-.description-article  {
+.description-article {
   font-family: Inter-Bold;
   padding-bottom: 3%;
-
 }
 
 button.like-button {
@@ -172,8 +171,6 @@ button.like-button {
   display: flex;
   flex-direction: row;
   height: 6vmin;
-  /*position: sticky;
-  top: 0px;*/
 }
 
 .nav {
@@ -207,9 +204,7 @@ button.like-button {
 
 .signIn-btn,
 .signOut-btn {
-  /*background-color: #313131;*/
   border: none;
-  /*border-radius: 20%;*/
   align-items: center;
   background: transparent;
 }
@@ -249,6 +244,10 @@ button.like-button {
   justify-content: center;
   align-items: center;
 }
+
+/*.profile > img {
+  width: 20vw;
+}*/
 
 .search-button {
   background-color: #3e3e3e;
@@ -358,8 +357,14 @@ a:active {
 }
 
 .cover-images > img {
-  width: 100%;
-  height: 100%;
+  width: 368px;
+  height: 448px;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.cover-images > img:hover {
+  opacity: 0.7;
 }
 
 .red {
@@ -537,13 +542,13 @@ a:active {
   background-color: #2e2c2c;
   text-align: center;
   min-height: 65vh;
-  color: rgb(240, 230, 217);
-  font-size: 2vmin;
+  font-size: 2.2vmin;
 }
 
 .my-games > h2 {
   margin: 0;
   padding: 7vmin 0 7vmin 0;
+  color: rgb(240, 230, 217);
 }
 
 .liked-games {
@@ -561,9 +566,9 @@ a:active {
 
 .user-page {
   font-size: 1.7vmin;
-  color: #1c1b1b;
   min-height: 97.5vh;
-  background-color: rgb(240, 230, 217);
+  background-color: black;
+  color: rgb(251, 251, 250);
 }
 
 .black {
@@ -587,6 +592,17 @@ a:active {
   grid-template-columns: repeat(3, 1fr);
 }
 
+@media screen and (max-width: 1570px) {
+  .cover-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cover-images {
+    margin-left: 3vw;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .genre-img {
     grid-template-columns: repeat(1, 1fr);
@@ -607,9 +623,14 @@ a:active {
     text-align: center;
   }
 
-  .images {
+  .images,
+  .cover-images {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cover-images {
+    margin-left: 6vw;
   }
 }
 
@@ -652,9 +673,15 @@ a:active {
     justify-content: center;
   }
 
-  .images {
+  .images,
+  .cover-images {
     grid-template-columns: repeat(1, 1fr);
     place-items: center;
+  }
+
+  .cover-images > img {
+    width: 500px;
+    height: 250px;
   }
 
   .signIn-btn,
@@ -710,6 +737,11 @@ a:active {
     width: 200px;
     height: auto;
     margin: 0;
+  }
+
+  .cover-images > img {
+    width: 280px;
+    height: 120px;
   }
 
   .analytics-title {
