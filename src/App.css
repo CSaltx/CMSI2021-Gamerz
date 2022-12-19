@@ -111,17 +111,22 @@
 
 .article-img {
   height: auto;
-  width: 800px;
+  width: 60vw;
+  align-self: center;
 }
 
 h1.article-title  {
-  font-size: 75px;
+  font-size: 600%;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   position: center;
+  background-color: #3e3e3e;
+  width: 100vw;
 }
 
 p.article-release   {
+  font-size: 150%;
   text-align: center;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .article-content {
@@ -136,8 +141,23 @@ p.article-release   {
   overflow-x: hidden;
 }
 
+.article-description  {
+  margin-bottom: 3%;
+}
+
+.description-article  {
+  font-family: Inter-Bold;
+  padding-bottom: 3%;
+
+}
+
 button.like-button {
   width: 100%;
+}
+
+.add-to-library {
+  text-align: center;
+  font-size: 70%;
 }
 
 .home-image {

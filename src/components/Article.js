@@ -71,12 +71,13 @@ const Article = () => {
               />
               <p className="article-release">Released: {info.released}</p>
             </div>
-            <button onClick={handleLike} className="like-button">
+              <button onClick={handleLike} className="like-button">
                   <i className="fa-solid fa-heart fa-2x"></i>
-                </button>
+              </button>
+              <p className="add-to-library">Add to library</p>
             </div>
             
-            <div>
+            <div className="article-description">
               <p className="description-article">{info.description_raw}</p>
               <p className="bold red">
                 Genres:{" "}
@@ -86,11 +87,11 @@ const Article = () => {
                     ))
                   : "Loading..."}
               </p>
-              <p>Twitch Count: {info.twitch_count}</p>
-              <p>
+              <p className="bold">Twitch Count: {info.twitch_count}</p>
+              <p className="bold">
                 Website: <a href={info.website}>Click Here</a>
               </p>
-              <p>Metacritic Score: {info.metacritic}</p>
+              <p className="bold">Metacritic Score: {info.metacritic}</p>
             </div>
           </div>
         </>
