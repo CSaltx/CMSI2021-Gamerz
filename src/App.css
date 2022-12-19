@@ -241,9 +241,8 @@ button.like-button {
 
 .signIn-btn {
   width: 20vmin;
-  height: 6vmin;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: auto 3fr;
   justify-items: center;
 }
 
@@ -302,6 +301,10 @@ a:active {
   color: #c3c3c3;
   font-size: 2vmin;
   font-family: Inter;
+}
+
+.signIn-btn > p {
+  margin-top: 1.6vmin;
 }
 
 .link:focus {
@@ -393,7 +396,7 @@ a:active {
   opacity: 0.5;
 }
 
-.game-info > img:hover > .button {
+.game-info > img:hover .button {
   opacity: 1;
   display: block;
 }
@@ -401,7 +404,7 @@ a:active {
 .button {
   width: 500px;
   text-align: center;
-  display: none;
+  display: block;
   opacity: 0;
   transition: opacity 0.35s ease;
 }
@@ -552,7 +555,7 @@ a:active {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background-color: #3d854384;
+  background-color: #1fa331;
   border-radius: 10px;
   border: none;
   cursor: pointer;
@@ -560,7 +563,7 @@ a:active {
   width: 18vmin;
   font-family: Inter;
   font-size: 1.8vmin;
-  color: rgb(240, 235, 228);
+  color: rgb(255, 255, 255);
 }
 
 .results > h1 {

@@ -21,7 +21,7 @@ function App() {
       nav.style.gridTemplateColumn = "repeat(3, 1vh)";
       nav.style.justifyItems = "center";
       nav.style.textAlign = "center";
-      navArea.style.height = "60vh";
+      navArea.style.height = "20vh";
     } else {
       nav.style.display = "none";
       navArea.style.height = "14.2vh";
