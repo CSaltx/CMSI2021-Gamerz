@@ -1,35 +1,34 @@
-import React from "react";
-import eldenRing from "../images/eldenRing.png";
-import forbiddenWest from "../images/forbiddenWest.png";
-import mw2 from "../images/mw2.png";
-import overwatch2 from "../images/overwatch2.png";
-import ragnarok from "../images/ragnarok.png";
-import valorant from "../images/valorant.png";
+import React, { useState, useEffect } from "react";
 import { db } from "./firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
 import girl from "../images/userPage1.png";
 import guy from "../images/userPage2.png";
 
-const findOnClick = () => {
-  window.location = "/genres";
-};
-
-const getUserGames = async () => {
-  const docRef = doc(db, "users", "likedGames");
-  const docSnap = await getDoc(docRef);
-  if (docSnap.exists()) {
-    console.log(docSnap);
-    return docSnap;
-  } else {
-    console.log("Must like a game to see game displayed!");
-  }
-};
-
 function UserPage({ user, myGames }) {
+  const [likedGames, setLikedGames] = useState();
+
+  const findOnClick = () => {
+    window.location = "/genres";
+  };
+
+  const getUserGames = async () => {
+    const docRef = doc(db, "users", user.uid);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      console.log(docSnap.data());
+      setLikedGames(docSnap.data().likedGames);
+    } else {
+      console.log("Must like a game to see game displayed!");
+    }
+  };
+
+  getUserGames();
+
   return (
     <>
       <div className="user-page">
         <div className="profile">
+          {/* add background imgs */}
           {/*
           <img src={girl} alt="tracer" />
           */}
@@ -39,12 +38,9 @@ function UserPage({ user, myGames }) {
           </div>
         </div>
         <div className="my-games">
-          {/* add background imgs */}
-          {/* fetch data from database */}
           <h2 className="bold">MY GAMES</h2>
-          {!myGames ? (
+          {!likedGames ? (
             <div id="no-games-msg">
-              {/*<p> liked games will show up here</p>*/}
               <p className="no-games"> no liked games</p>
               <button onClick={findOnClick} className="find-game-button">
                 find a game
@@ -53,20 +49,9 @@ function UserPage({ user, myGames }) {
           ) : (
             <div className="liked-games">
               <div className="cover-images">
-                <img src={overwatch2} className="image" alt="Overwatch2" />
-                <img src={valorant} className="image" alt="Valorant" />
-                <img src={mw2} className="image" alt="Modern Warfare 2" />
-                <img
-                  src={ragnarok}
-                  className="image"
-                  alt="God of War: Ragnarok"
-                />
-                <img
-                  src={forbiddenWest}
-                  className="image"
-                  alt="Horizon: Forbidden West"
-                />
-                <img src={eldenRing} className="image" alt="Elden Ring" />
+                {likedGames.map((imgUrl) => (
+                  <img src={imgUrl} alt="game-image" />
+                ))}
               </div>
             </div>
           )}
