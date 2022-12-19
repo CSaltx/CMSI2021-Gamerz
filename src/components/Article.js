@@ -58,13 +58,10 @@ const Article = () => {
           <div className="article-content">
             <div className="article-heading">
               <div className="flex">
-                <h1>{info.name}</h1>
-                <button onClick={handleLike} className="like-button">
-                  <i className="fa-solid fa-heart fa-2x"></i>
-                </button>
+                <h1 className="article-title">{info.name}</h1>
               </div>
-              <p>Released: {info.released}</p>
             </div>
+            <div>
             <div className="article-image">
               <img
                 className="article-img"
@@ -72,7 +69,13 @@ const Article = () => {
                 alt="article-image"
                 aria-hidden="true"
               />
+              <p className="article-release">Released: {info.released}</p>
             </div>
+            <button onClick={handleLike} className="like-button">
+                  <i className="fa-solid fa-heart fa-2x"></i>
+                </button>
+            </div>
+            
             <div>
               <p className="description-article">{info.description_raw}</p>
               <p className="bold red">

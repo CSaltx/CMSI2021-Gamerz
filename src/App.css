@@ -88,8 +88,18 @@
 }
 
 .article-img {
-  height: 200px;
-  width: auto;
+  height: auto;
+  width: 800px;
+}
+
+h1.article-title  {
+  font-size: 75px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  position: center;
+}
+
+p.article-release   {
+  text-align: center;
 }
 
 .article-content {
