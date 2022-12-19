@@ -28,7 +28,7 @@ function UserPage({ user }) {
     <>
       <div className="user-page">
         <div className="profile">
-          {/* add background imgs, fix nav bar and my games responsiveness, remove games */}
+          {/* add background imgs, fix nav bar responsiveness, remove & go to article page buttons */}
           {/*<img src={girl} alt="tracer" />*/}
           <div className="user-info">
             <img src={user.photoURL} alt="profile picture" />
@@ -49,8 +49,13 @@ function UserPage({ user }) {
             <div className="liked-games">
               <div className="cover-images">
                 {likedGames.map((imgUrl) => (
-                  <img src={imgUrl} alt="game-image" />
+                  <div className="game-info">
+                    <img src={imgUrl} alt="game-image" />
+                  </div>
                 ))}
+                <div className="button">
+                  <a href="#"> about </a>
+                </div>
               </div>
             </div>
           )}

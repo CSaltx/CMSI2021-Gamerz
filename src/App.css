@@ -382,15 +382,36 @@ a:active {
   justify-content: space-evenly;
 }
 
-.cover-images > img {
+.game-info > img {
   width: 368px;
   height: 448px;
   object-fit: cover;
   transition: 0.3s;
 }
 
-.cover-images > img:hover {
-  opacity: 0.7;
+.game-info > img:hover {
+  opacity: 0.5;
+}
+
+.game-info > img:hover > .button {
+  opacity: 1;
+  display: block;
+}
+
+.button {
+  width: 500px;
+  text-align: center;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.button > a {
+  width: 200px;
+  padding: 12px 48px;
+  text-align: center;
+  color: white;
+  border: solid 2px white;
 }
 
 .red {
@@ -531,12 +552,12 @@ a:active {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background-color: #558759fa;
-  border-radius: 30px;
+  background-color: #3d854384;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
   height: 6vmin;
-  width: 20vmin;
+  width: 18vmin;
   font-family: Inter;
   font-size: 1.8vmin;
   color: rgb(240, 235, 228);
@@ -706,7 +727,7 @@ a:active {
     place-items: center;
   }
 
-  .cover-images > img {
+  .game-info > img {
     width: 500px;
     height: 250px;
   }
@@ -786,7 +807,7 @@ a:active {
     margin: 0;
   }
 
-  .cover-images > img {
+  .game-info > img {
     width: 280px;
     height: 120px;
   }
