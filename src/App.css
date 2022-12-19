@@ -599,6 +599,7 @@ a:active {
   background-color: #1c1b1b;
   height: 100vh;
   display: grid;
+  grid-template-rows: auto 1fr 1.5fr 1.5fr;
   text-align: center;
 }
 
@@ -667,6 +668,7 @@ a:active {
   }
 
   .about-page {
+    grid-template-rows: auto 0.7fr 1.5fr 1fr;
     height: 100%;
   }
 
