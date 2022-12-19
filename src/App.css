@@ -10,24 +10,50 @@
   font-weight: bold;
 }
 
+.genre-content {
+  background-color: #2e2c2c;
+}
+
+.game-list {
+  margin-top: 20vh;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
 #genre-btn {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  text-align: center;
-  width: 100%;
+}
+
+#image {
+  width: 50vh;
+  height: auto;
 }
 
 #info > h3 {
   text-align: center;
 }
 
+.upper {
+  text-transform: uppercase;
+  text-align: left;
+  margin: 0;
+  padding: 4vh;
+}
+
 .card {
-  background-color: white;
-  width: 50vh;
-  height: 30vh;
+  background-color: #c3c3c3;
+  width: 40vh;
+  height: 60vh;
   box-shadow: 0 4px 8px 0 white;
   transition: 0.3s;
+  border-radius: 40px;
 }
 
 .card:hover {
@@ -456,12 +482,6 @@ a:active {
   background-color: #ff5353;
 }
 
-.game-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2vh;
-}
-
 .buttons {
   display: flex;
   flex-direction: row;
@@ -604,8 +624,11 @@ a:active {
 }
 
 @media screen and (max-width: 1200px) {
-  .genre-img {
-    grid-template-columns: repeat(1, 1fr);
+  .game-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vw;
+    overflow-y: scroll;
   }
 
   .genre-list {
@@ -636,9 +659,11 @@ a:active {
 
 @media screen and (max-width: 1000px) {
   .game-list {
-    display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 2vh;
+  }
+
+  .card {
+    width: 80vw;
   }
 
   .about-page {
@@ -710,6 +735,26 @@ a:active {
 }
 
 @media screen and (max-width: 540px) {
+  div.card {
+    width: 80vw;
+    height: 30vh;
+  }
+
+  #image {
+    width: 20vh;
+  }
+
+  .game-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2vh;
+    overflow-y: scroll;
+  }
+
+  .card {
+    width: 50vh;
+  }
+
   .genreImg {
     width: 20em;
   }
