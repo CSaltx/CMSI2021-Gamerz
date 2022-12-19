@@ -28,13 +28,13 @@ function UserPage({ user, myGames }) {
         <div className="my-games">
           {/* add background imgs */}
           {/* fetch data from database */}
-          <h1 className="bold">MY GAMES</h1>
-          {myGames ? (
-            <div>
-              <h2> liked games will show up here</h2>
-              {/*<h2 className="no-games"> you have not liked any games</h2>*/}
+          <h2 className="bold">MY GAMES</h2>
+          {!myGames ? (
+            <div id="no-games-msg">
+              {/*<p> liked games will show up here</p>*/}
+              <p className="no-games"> no liked games</p>
               <button onClick={findOnClick} className="find-game-button">
-                Find a Game
+                find a game
               </button>
             </div>
           ) : (

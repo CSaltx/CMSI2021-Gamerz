@@ -54,17 +54,15 @@
   background-color: black;
   display: flex;
   flex-direction: row;
+  height: 6vmin;
+  /*position: sticky;
+  top: 0px;*/
 }
 
 .nav {
   justify-content: flex-start;
   gap: 20px;
   align-items: center;
-}
-
-.user-buttons,
-.nav {
-  height: 6vmin;
 }
 
 .signIn-btn > img,
@@ -101,18 +99,18 @@
 
 .signOut-btn {
   width: 16vmin;
-  height: 100%;
 }
 
 .signIn-btn {
   width: 20vmin;
+  height: 6vmin;
   display: grid;
   grid-template-columns: 1fr 3fr;
   justify-items: center;
 }
 
 .user-info > img {
-  width: 20vmin;
+  width: 17vmin;
   border-radius: 50%;
   margin: 7vmin 0 0 0;
 }
@@ -157,8 +155,8 @@ a:active {
 }
 
 .link,
-.signIn-btn > h2,
-.signOut-btn > h2 {
+.signIn-btn > p,
+.signOut-btn > p {
   color: #c3c3c3;
   font-size: 2vmin;
   font-family: Inter;
@@ -232,10 +230,6 @@ a:active {
   height: 448px;
   object-fit: cover;
   margin-bottom: 2vh;
-}
-
-.liked-games {
-  padding: 7vmin;
 }
 
 .cover-images {
@@ -384,20 +378,20 @@ a:active {
 }
 
 .find-game-button {
-  margin: 10vh 0 0 0;
+  margin: 4vh 0 0 0;
   position: absolute;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background-color: #756666;
-  color: #fff;
-  border-radius: 50px;
+  background-color: #558759fa;
+  border-radius: 30px;
   border: none;
   cursor: pointer;
-  height: 10vh;
-  width: 40vh;
-  font-family: Inter-Bold;
-  font-size: 3vh;
+  height: 6vmin;
+  width: 20vmin;
+  font-family: Inter;
+  font-size: 1.8vmin;
+  color: rgb(240, 235, 228);
 }
 
 .results > h1 {
@@ -418,16 +412,23 @@ a:active {
 
 .my-games {
   background-color: #2e2c2c;
-  /*height: auto !important; /* real browsers */
-  /*min-height: 100%;*/
-  color: rgb(240, 230, 217);
   text-align: center;
-  min-height: 100vh;
+  min-height: 65vh;
+  color: rgb(240, 230, 217);
+  font-size: 2vmin;
 }
 
-.my-games > h1 {
+.my-games > h2 {
   margin: 0;
-  padding-top: 7vmin;
+  padding: 7vmin 0 7vmin 0;
+}
+
+.liked-games {
+  padding: 0 5vmin 5vmin 5vmin;
+}
+
+#no-games-msg {
+  padding-top: 5vmin;
 }
 
 .user-buttons {
@@ -436,9 +437,10 @@ a:active {
 }
 
 .user-page {
-  font-size: 2vmin;
+  font-size: 1.7vmin;
+  color: #1c1b1b;
+  min-height: 97.5vh;
   background-color: rgb(240, 230, 217);
-  /*text-transform: uppercase;*/
 }
 
 .black {

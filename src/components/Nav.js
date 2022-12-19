@@ -29,7 +29,7 @@ const Nav = () => {
         ) : (
           <div className="user-buttons">
             <Link to="/user" id="user-page-link">
-              <img src={auth.currentUser.photoURL} alt="profile photo" />
+              <img src={auth.currentUser.photoURL} alt="profile picture" />
             </Link>
             <SignOut />
           </div>

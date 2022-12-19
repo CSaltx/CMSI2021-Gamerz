@@ -10,7 +10,7 @@ export function SignIn() {
       onClick={() => signInWithPopup(auth, new GoogleAuthProvider())}
     >
       <img src={userIcon} alt="user icon" id="unknown-user" />
-      <h2>Sign In</h2>
+      <p>Sign In</p>
     </button>
   );
 }
@@ -20,7 +20,7 @@ export function SignOut() {
     <div>
       {/* Hello, {auth.currentUser.displayName} &nbsp; Will be added in user page probably */}
       <button className="signOut-btn" onClick={() => signOut(auth)}>
-        <h2>Sign Out</h2>
+        <p>Sign Out</p>
       </button>
     </div>
   );
