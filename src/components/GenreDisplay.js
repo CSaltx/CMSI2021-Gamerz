@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import game_logo from "../images/game_logo.png";
 
 const GenreDisplay = () => {
   const params = useParams();
@@ -35,23 +36,28 @@ const GenreDisplay = () => {
   });
 
   return (
-    <div className="article-content">
+    <div className="genre-content">
+      <h1 className="bold white upper">
+        Our <span className="red">Top</span> Picks
+      </h1>
       {genres?.results ? (
-        <ul className="game-list">
+        <div className="game-list">
           {genres.results[genre].games.map((obj, index) => (
             <div key={index} className="card">
-              <div id="image"></div>
               <div id="info">
                 <h3 className="black">{obj.name}</h3>
+                <img id="image" src={game_logo} aria-hidden="true" />
                 <Link to={`/game/${obj.slug}`}>
-                  <button id="genre-btn">View</button>
+                  <button className="bold" id="genre-btn">
+                    Learn More
+                  </button>
                 </Link>
               </div>
             </div>
           ))}
-        </ul>
+        </div>
       ) : (
-        "Loading..."
+        <h3 className="black bold">"Loading..."</h3>
       )}
     </div>
   );
