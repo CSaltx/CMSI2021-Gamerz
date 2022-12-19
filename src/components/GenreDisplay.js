@@ -1,13 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const GenreDisplay = () => {
   const params = useParams();
   const genre = params.query;
-  const ref = useRef();
-  const navigate = useNavigate();
-  const handleClick = () => navigate(`/game/`);
   const [genres, setGenres] = useState();
 
   const fetching = (urlExtension) => {
@@ -46,9 +43,9 @@ const GenreDisplay = () => {
               <div id="image"></div>
               <div id="info">
                 <h3 className="black">{obj.name}</h3>
-                <button ref={ref} onClick={handleClick}>
-                  View
-                </button>
+                <Link to={`/game/${obj.slug}`}>
+                  <button id="genre-btn">View</button>
+                </Link>
               </div>
             </div>
           ))}

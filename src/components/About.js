@@ -15,7 +15,7 @@ const About = () => {
       </div>
       <div className="about-info">
         <div>
-          <i class="fa-solid fa-earth-americas fa-6x white"></i>
+          <i className="fa-solid fa-earth-americas fa-6x white"></i>
           <p className="red bold">Background</p>
           <p className="white">
             We all come from a variety of backgrounds,
@@ -23,7 +23,7 @@ const About = () => {
           </p>
         </div>
         <div>
-          <i class="fa-regular fa-6x fa-face-smile-beam white"></i>
+          <i className="fa-regular fa-6x fa-face-smile-beam white"></i>
           <p className="red bold">Unique Tastes</p>
           <p className="white">
             We all grew up on different genres
@@ -31,7 +31,7 @@ const About = () => {
           </p>
         </div>
         <div>
-          <i class="fa-regular fa-lightbulb fa-6x white"></i>
+          <i className="fa-regular fa-lightbulb fa-6x white"></i>
           <p className="red bold">Creativity</p>
           <p className="white">
             As students, we thrive and imbue creativity

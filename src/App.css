@@ -10,6 +10,30 @@
   font-weight: bold;
 }
 
+#genre-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+
+#info > h3 {
+  text-align: center;
+}
+
+.card {
+  background-color: white;
+  width: 50vh;
+  height: 30vh;
+  box-shadow: 0 4px 8px 0 white;
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
 .description-article {
   width: 130vmin;
 }
@@ -52,8 +76,6 @@
 
 .genreImg:hover {
   opacity: 100;
-  width: 45em;
-  height: auto;
 }
 
 .flex > h1 {
@@ -411,10 +433,6 @@ a:active {
   gap: 2vh;
 }
 
-.card {
-  background-color: white;
-}
-
 .buttons {
   display: flex;
   flex-direction: row;
@@ -564,6 +582,12 @@ a:active {
 }
 
 @media screen and (max-width: 1000px) {
+  .game-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2vh;
+  }
+
   .about-page {
     height: 100%;
   }
