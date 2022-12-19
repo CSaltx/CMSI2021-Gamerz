@@ -10,6 +10,87 @@
   font-weight: bold;
 }
 
+#genre-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+
+#info > h3 {
+  text-align: center;
+}
+
+.card {
+  background-color: white;
+  width: 50vh;
+  height: 30vh;
+  box-shadow: 0 4px 8px 0 white;
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.description-article {
+  width: 130vmin;
+}
+
+.genre-list {
+  background-color: black;
+}
+
+.genre-img {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow-x: hidden;
+}
+
+.genre-list > h1 {
+  margin: 0;
+  color: white;
+  text-align: center;
+  padding: 5vh;
+}
+
+.centered-text {
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+.genre-img > div {
+  display: grid;
+  place-content: center;
+}
+
+.genreImg {
+  opacity: 50;
+  width: 40em;
+  height: auto;
+  padding-bottom: 5vh;
+  transition: 1s;
+}
+
+.genreImg:hover {
+  opacity: 100;
+}
+
+.flex > h1 {
+  font-size: 2.5vmin;
+  font-family: Inter;
+  color: white;
+  display: grid;
+  place-content: center;
+}
+
+.article-content > div > p > a {
+  margin: 0;
+  color: white;
+}
+
 .redirect {
   width: 100vw;
   height: 100vh;
@@ -29,8 +110,23 @@
 }
 
 .article-img {
-  height: 200px;
-  width: auto;
+  height: auto;
+  width: 60vw;
+  align-self: center;
+}
+
+h1.article-title  {
+  font-size: 600%;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  position: center;
+  background-color: #3e3e3e;
+  width: 100vw;
+}
+
+p.article-release   {
+  font-size: 150%;
+  text-align: center;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .article-content {
@@ -39,8 +135,29 @@
   background-color: #1c1b1b;
   color: white;
   display: grid;
-  place-content: center;
-  overflow: scroll;
+  grid-template-columns: repeat(1, 1fr);
+  place-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.article-description  {
+  margin-bottom: 3%;
+}
+
+.description-article  {
+  font-family: Inter-Bold;
+  padding-bottom: 3%;
+
+}
+
+button.like-button {
+  width: 100%;
+}
+
+.add-to-library {
+  text-align: center;
+  font-size: 70%;
 }
 
 .home-image {
@@ -334,6 +451,12 @@ a:active {
   background-color: #ff5353;
 }
 
+.game-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2vh;
+}
+
 .buttons {
   display: flex;
   flex-direction: row;
@@ -465,6 +588,15 @@ a:active {
 }
 
 @media screen and (max-width: 1200px) {
+  .genre-img {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .genre-list {
+    display: grid;
+    place-content: center;
+  }
+
   .home-image {
     display: none;
   }
@@ -482,6 +614,12 @@ a:active {
 }
 
 @media screen and (max-width: 1000px) {
+  .game-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2vh;
+  }
+
   .about-page {
     height: 100%;
   }
@@ -545,6 +683,10 @@ a:active {
 }
 
 @media screen and (max-width: 540px) {
+  .genreImg {
+    width: 20em;
+  }
+
   .about-info {
     grid-template-columns: repeat(1, 1fr);
   }

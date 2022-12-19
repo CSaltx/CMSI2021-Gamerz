@@ -1,17 +1,16 @@
 import "./App.css";
-import { useState } from "react";
 import Nav from "./components/Nav";
 import HomePage from "./components/HomePage";
 import Article from "./components/Article";
 import Genres from "./components/Genres";
 import About from "./components/About";
+import GenreDisplay from "./components/GenreDisplay";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import UserPage from "./components/UserPage";
 import { auth } from "./components/firebaseConfig";
 import { SignIn, SignOut, useAuthentication } from "./services/authService";
 
 function App() {
-  const [searching, setSearching] = useState(false);
   const user = useAuthentication();
 
   const displayNav = () => {
@@ -41,6 +40,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/game/:query" element={<Article />} />
+          <Route path="/genre/:query" element={<GenreDisplay />} />
           <Route path="/genres" element={<Genres />} />
           <Route path="/about" element={<About />}></Route>
           {!user ? (

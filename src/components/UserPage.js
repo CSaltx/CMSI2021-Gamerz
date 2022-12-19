@@ -5,11 +5,24 @@ import mw2 from "../images/mw2.png";
 import overwatch2 from "../images/overwatch2.png";
 import ragnarok from "../images/ragnarok.png";
 import valorant from "../images/valorant.png";
+import { db } from "./firebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
 import girl from "../images/userPage1.png";
 import guy from "../images/userPage2.png";
 
 const findOnClick = () => {
   window.location = "/genres";
+};
+
+const getUserGames = async () => {
+  const docRef = doc(db, "users", "likedGames");
+  const docSnap = await getDoc(docRef);
+  if (docSnap.exists()) {
+    console.log(docSnap);
+    return docSnap;
+  } else {
+    console.log("Must like a game to see game displayed!");
+  }
 };
 
 function UserPage({ user, myGames }) {
