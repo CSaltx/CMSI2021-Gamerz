@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { db } from "./firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
 
@@ -20,7 +20,9 @@ function UserPage({ user }) {
     }
   };
 
-  getUserGames();
+  useEffect(() => {
+    getUserGames();
+  }, []);
 
   return (
     <>
@@ -28,7 +30,7 @@ function UserPage({ user }) {
         <div className="profile">
           {/* add background imgs, fix nav bar responsiveness, change find game button color, remove & go to article page buttons */}
           <div className="user-info">
-            <img src={user.photoURL} alt="profile picture" />
+            <img src={user.photoURL} alt="profile" />
             <h1 className="bold">{user.displayName} </h1>
           </div>
         </div>
@@ -46,12 +48,9 @@ function UserPage({ user }) {
               <div className="cover-images">
                 {likedGames.map((imgUrl) => (
                   <div className="game-info">
-                    <img src={imgUrl} alt="game-image" />
+                    <img src={imgUrl} alt="game title" />
                   </div>
                 ))}
-                <div className="button">
-                  <a href="#"> about </a>
-                </div>
               </div>
             </div>
           )}
