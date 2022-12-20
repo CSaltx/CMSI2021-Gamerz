@@ -555,7 +555,7 @@ a:active {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background-color: #1fa331;
+  background-color: #1fa331e2;
   border-radius: 10px;
   border: none;
   cursor: pointer;
