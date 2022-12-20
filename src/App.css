@@ -83,8 +83,7 @@
 
 .centered-text {
   color: white;
-  text-align: center;
-  margin: 0;
+  margin-bottom: 2vh;
 }
 
 .genre-img > div {
@@ -96,7 +95,7 @@
   opacity: 50;
   width: 40em;
   height: auto;
-  padding-bottom: 5vh;
+  padding-bottom: 0vh;
   transition: 1s;
 }
 
@@ -514,7 +513,7 @@ a:active {
   gap: 4vh;
 }
 
-.buttons > button {
+.buttons > .link-btn > button {
   border-radius: 0 5px 5px 5px;
   border: none;
   cursor: pointer;
@@ -761,6 +760,21 @@ a:active {
 }
 
 @media screen and (max-width: 540px) {
+  .bold-title {
+    font-size: 6vh;
+  }
+
+  .subtext {
+    font-size: 1.5vh;
+  }
+
+  .buttons > .link-btn > button {
+    height: 3vh;
+    width: fit-content;
+    margin-top: 0vh;
+    font-family: Inter-Bold;
+  }
+
   div.card {
     width: 80vw;
     height: 30vh;

@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { db } from "./firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 function UserPage({ user }) {
   const [likedGames, setLikedGames] = useState();
-
-  const findOnClick = () => {
-    window.location = "/genres";
-  };
 
   const getUserGames = async () => {
     const docRef = doc(db, "users", user.uid);
@@ -39,9 +36,9 @@ function UserPage({ user }) {
           {!likedGames ? (
             <div id="no-games-msg">
               <p className="no-games"> no liked games</p>
-              <button onClick={findOnClick} className="find-game-button">
-                find a game
-              </button>
+              <Link to="/genres">
+                <button className="find-game-button">find a game</button>
+              </Link>
             </div>
           ) : (
             <div className="liked-games">

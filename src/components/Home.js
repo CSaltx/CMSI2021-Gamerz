@@ -1,13 +1,6 @@
 import React from "react";
 import wraith from "../images/wraith.png";
-
-const aboutOnClick = () => {
-  window.location = "/about";
-};
-
-const startedOnClick = () => {
-  window.location = "/genres";
-};
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -25,12 +18,12 @@ const Home = () => {
             <span className="bold">YOU</span>.
           </p>
           <div className="buttons">
-            <button onClick={aboutOnClick} className="about-button">
-              About Us
-            </button>
-            <button onClick={startedOnClick} className="started-button">
-              Get Started
-            </button>
+            <Link to="/about" className="link-btn">
+              <button className="about-button">About Us</button>
+            </Link>
+            <Link to="/genres" className="link-btn">
+              <button className="started-button">Get Started</button>
+            </Link>
           </div>
         </div>
       </div>
